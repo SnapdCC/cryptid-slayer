@@ -26,12 +26,12 @@ public class Test : MonoBehaviour
         else
             Debug.Log("You are not over a menu");
         //Just open the normal Menu if A is pressed
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             piUi.ChangeMenuState("Normal Menu", new Vector2(Screen.width / 2f, Screen.height / 2f));
-        }
+        }*/
         //Update the menu and add the Testfunction to the button action if s or Fire1 axis is pressed
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             //Ensure menu isnt currently open on update just for a cleaner look
             if (!piUi.PiOpened("Normal Menu"))
@@ -53,7 +53,7 @@ public class Test : MonoBehaviour
             //Open or close the menu depending on it's current state at the center of the screne
             piUi.ChangeMenuState("Normal Menu", new Vector2(Screen.width / 2f, Screen.height / 2f));
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        /*if (Input.GetKeyDown(KeyCode.D))
         {
             //Ensure menu isnt currently open on regenerate so it doesnt spasm
             if (!piUi.PiOpened("Normal Menu"))
@@ -102,7 +102,7 @@ public class Test : MonoBehaviour
                 piUi.RegeneratePiMenu("Normal Menu");
             }
             piUi.ChangeMenuState("Normal Menu", new Vector2(Screen.width / 2f, Screen.height / 2f));
-        }
+        }*/
 
         //Set joystick input on the normal menu which the piPieces check
         normalMenu.joystickInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
