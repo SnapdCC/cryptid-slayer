@@ -1705,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114358342674604368, guid: f8d1463efe512bc4a90597e508985031, type: 3}
       propertyPath: piData.Array.data[3].angle
-      value: 57.099976
+      value: 114.20001
       objectReference: {fileID: 0}
     - target: {fileID: 114358342674604368, guid: f8d1463efe512bc4a90597e508985031, type: 3}
       propertyPath: piData.Array.data[3].buttonActions.m_TypeName
@@ -2995,7 +2995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224700795880293456, guid: f8d1463efe512bc4a90597e508985031, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -640
+      value: -994
       objectReference: {fileID: 0}
     - target: {fileID: 224700795880293456, guid: f8d1463efe512bc4a90597e508985031, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3489,8 +3489,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 23, y: 184}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 11.5, y: 208.2}
+  m_SizeDelta: {x: 186.12204, y: 57.080933}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &730273455
 MonoBehaviour:
@@ -3512,7 +3512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2e5c108a1235e34f808f83740535ead, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70fab80074b299444a8b07c096f43aa4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3582,7 +3582,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 32
+  field of view: 33
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4030,8 +4030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 184}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 209.3}
+  m_SizeDelta: {x: 213.32562, y: 149.55801}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1514190517
 MonoBehaviour:
