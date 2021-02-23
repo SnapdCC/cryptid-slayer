@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    public Camera cam;
 
     Vector2 movement;
+    Vector2 mousepos;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetKey(KeyCode.W) == true)
         {
@@ -34,8 +38,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("WalkingF", true);
         }
         else
+        {
             animator.SetBool("WalkingF", false);
-
+        }
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
     }
@@ -43,5 +48,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        Vector2 mousedir = mousepos - rb.position;
+        float angle = Mathf.Atan2(mousedir.y, mousedir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }
