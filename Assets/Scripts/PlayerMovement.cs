@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
 
         if (Input.GetKey(KeyCode.W) == true)
         {
@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         }
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
+        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()

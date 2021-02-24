@@ -4,14 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
   - item
   - rock
   - bullet
-=======
-  - Enemy
   - StaticPoint
->>>>>>> Stashed changes
+  - Cryptid
   layers:
   - Default
   - TransparentFX
