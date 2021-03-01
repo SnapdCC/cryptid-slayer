@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject wintext;
     public static float health;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,8 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             Destroy(gameObject);
+            wintext.SetActive(true);
+
         }
     }
 
