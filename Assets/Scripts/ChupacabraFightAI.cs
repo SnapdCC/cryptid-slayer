@@ -185,7 +185,7 @@ public class ChupacabraFightAI : MonoBehaviour
             if (betweenPounceTimer < 0)
             {
                 //if that was the last pounce, switch to phase 4
-                if (pounceCounter >= pounceAmount)
+                if (pounceCounter >= pounceAmount - 1)
                 {
                     pouncePhase = 4;
                 }
