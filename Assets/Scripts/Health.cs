@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             Destroy(gameObject);
-            wintext.SetActive(true);
+            SceneManager.LoadScene("WinScreen");
+            //wintext.SetActive(true);
 
         }
     }

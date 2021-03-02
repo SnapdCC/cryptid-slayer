@@ -24,7 +24,10 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         
-
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
+        {
+            //moveSpeed += 5;
+        }
         if (Input.GetKey(KeyCode.W) == true)
         {
             animator.SetBool("WalkingB", true);
