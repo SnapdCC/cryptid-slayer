@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     public static float health;
-    public int damagecount; // damagecount variable records # of times player has been hit
+    bool activetrap;
+    public float testdamage;
+    public static float damagecount; // damagecount variable records # of times player has been hit
     public Image FullHeart1; // Images for full, half, 3/4, and 1/4 hearts
     public Image FullHeart2;
     public Image FullHeart3;
@@ -32,6 +34,7 @@ public class PlayerDeath : MonoBehaviour
     void Update()
     {
         HeartManagement();
+        testdamage = damagecount;
 
         if (damagecount == 12)
         {
@@ -40,16 +43,27 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // Detects collisions between player and cryptid
+    void OnCollisionStay(Collision collisionInfo)
     {
-        if (collision.gameObject.tag.Equals("Cryptid"))
+        if (collisionInfo.gameObject.tag.Equals("smoke"))
         {
             damagecount++;
             //health = health - .25f;
         }
     }
 
-    void HeartManagement() // For each damage count the correct heart images are displayed based on the count
+
+        private void OnCollisionEnter2D(Collision2D collision) // Detects collisions between player and cryptid
+    {
+        if (collision.gameObject.tag.Equals("Cryptid"))
+        {
+            damagecount++;
+            //health = health - .25f;
+        }
+        
+    }
+    
+        void HeartManagement() // For each damage count the correct heart images are displayed based on the count
     {
         if (damagecount == 1)
         {

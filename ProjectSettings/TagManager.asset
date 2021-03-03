@@ -9,6 +9,8 @@ TagManager:
   - bullet
   - StaticPoint
   - Cryptid
+  - Box
+  - smoke
   layers:
   - Default
   - TransparentFX
