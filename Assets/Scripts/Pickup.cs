@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
     int count;
+    int stop = 0;
     int hintcount;
-    public GameObject clue1;
-    public GameObject clue2;
-    public GameObject clue3;
-    public GameObject clue4;
-    public GameObject hinttext1;
-    public GameObject hinttext2;
-    public GameObject hinttext3;
+    public GameObject script;
+    public GameObject clue1, clue2, clue3, clue4;
+    public GameObject hinttext1, hinttext2, hinttext3;
+    public GameObject hint1, hint2, hint3;
     public GameObject border;
+    public GameObject cam1, cam2;
     GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam1.SetActive(true);
+        cam2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,20 +41,24 @@ public class Pickup : MonoBehaviour
         {
             DestroyAllRocks();
             clue4.SetActive(true);
+            CamMovement();
         }
         if (hintcount == 1)
         {
             hinttext1.SetActive(true);
+            hint1.SetActive(true);
         }
         if (hintcount == 2)
         {
             hinttext1.SetActive(false);
             hinttext2.SetActive(true);
+            hint2.SetActive(true);
         }
         if (hintcount == 3)
         {
             hinttext2.SetActive(false);
             hinttext3.SetActive(true);
+            hint3.SetActive(true);
         }
     }
 
@@ -81,5 +85,21 @@ public class Pickup : MonoBehaviour
             Destroy(gameObjects[i]);
         }
         Destroy(border);
+    }
+    void CamMovement()
+    {
+        
+        if (stop == 0)
+        {
+            cam1.SetActive(false);
+            cam2.SetActive(true);
+        }
+        cam2.GetComponent<movecam>().enabled = true;
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            stop = 1;
+            cam1.SetActive(true);
+            cam2.SetActive(false);
+        }
     }
 }

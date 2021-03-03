@@ -31,7 +31,7 @@ public class Test : MonoBehaviour
             piUi.ChangeMenuState("Normal Menu", new Vector2(Screen.width / 2f, Screen.height / 2f));
         }*/
         //Update the menu and add the Testfunction to the button action if s or Fire1 axis is pressed
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             //Ensure menu isnt currently open on update just for a cleaner look
             if (!piUi.PiOpened("Normal Menu"))
@@ -107,11 +107,11 @@ public class Test : MonoBehaviour
         //Set joystick input on the normal menu which the piPieces check
         normalMenu.joystickInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         //Set the bool to detect if the controller button has been pressed
-        normalMenu.joystickButton = Input.GetButtonDown("Fire1");
+        normalMenu.joystickButton = Input.GetKeyDown(KeyCode.Q);
         //If the button isnt pressed check if has been released
         if (!normalMenu.joystickButton)
         {
-            normalMenu.joystickButton = Input.GetButtonUp("Fire1");
+            normalMenu.joystickButton = Input.GetKeyDown(KeyCode.Q);
         }
     }
     //Test function that writes to the console and also closes the menu
@@ -129,5 +129,14 @@ public class Test : MonoBehaviour
     public void OnHoverExit()
     {
         Debug.Log("That's right and dont come back!");
+    }
+
+    public void JackalopeFoot()
+    {
+        if (Input.GetButtonDown("Fire1") == true)
+        {
+            PlayerMovement.moveSpeed += 5;
+        }
+        
     }
 }
