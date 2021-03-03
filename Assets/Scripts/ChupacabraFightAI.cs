@@ -24,7 +24,7 @@ public class ChupacabraFightAI : MonoBehaviour
 
     public int pounceAmount = 3; //Amount of pounces per pounce phase
     public float timeBetweenPounces = 1f; //The timing between each pounce during the pounce phase
-    public float betweenPounceTimer; //Tracker for the time between pounces
+    private float betweenPounceTimer; //Tracker for the time between pounces
     private int pounceCounter; //Counts the amount of times pounced during the pounce phase
     //private float pouncePhaseTimer; //timer to keep track of certain timings in pounce phase
     private int pouncePhase; //counter to keep track of which phase of the pounce we are in
@@ -153,7 +153,7 @@ public class ChupacabraFightAI : MonoBehaviour
             transform.right = staticPoint.transform.position - transform.position;
 
             //Reset betweenPounceTimer
-            if (pounceCounter < pounceAmount)
+            if (pounceCounter < pounceAmount - 1)
                 betweenPounceTimer = timeBetweenPounces;
             else
                 betweenPounceTimer = timeBetweenPounces * 2;

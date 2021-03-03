@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static float moveSpeed = 5f;
-    public float testspeed;
-    public Rigidbody2D rb;
+    public float moveSpeed = 5f;
+
+    public Rigidbody2D rbMove;
+    public Rigidbody2D rbRotate;
     public Animator animator;
     public Camera cam;
 
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        testspeed = moveSpeed;
+
         
         if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
         {
@@ -51,10 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        Vector2 mousedir = mousepos - rb.position;
+        rbMove.MovePosition(rbMove.position + movement * moveSpeed * Time.fixedDeltaTime);
+        Vector2 mousedir = mousepos - rbRotate.position;
         float angle = Mathf.Atan2(mousedir.y, mousedir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        // rbRotate.rotation = angle;
     }
 }
