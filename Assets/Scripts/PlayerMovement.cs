@@ -23,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
-
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
+        {
+            //moveSpeed += 5;
+        }
         if (Input.GetKey(KeyCode.W) == true)
         {
             animator.SetBool("WalkingB", true);
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         }
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
+        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()

@@ -28,7 +28,8 @@ public class ChupacabraFightAI : MonoBehaviour
     private int pounceCounter; //Counts the amount of times pounced during the pounce phase
     //private float pouncePhaseTimer; //timer to keep track of certain timings in pounce phase
     private int pouncePhase; //counter to keep track of which phase of the pounce we are in
-    //private Transform storedPosition; //Stores position of player at beginning of pounce 
+    private GameObject staticPoint; //Stores position of player at beginning of pounce 
+    private bool passedPoint; //flag for whether or not the cabra has triggered staticPoint during the current pounce
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,9 @@ public class ChupacabraFightAI : MonoBehaviour
         strafeChangeTimer = strafeChangeTime + Random.Range(-strafeChangeTimeVariance, strafeChangeTimeVariance);
         pounceTimer = pounceTime + Random.Range(-pounceTimeVariance, pounceTimeVariance);
 
+        staticPoint = GameObject.FindWithTag("StaticPoint");
+
+        pounceCounter = 0;
         pouncePhase = 1;
         betweenPounceTimer = timeBetweenPounces;
     }
@@ -98,7 +102,7 @@ public class ChupacabraFightAI : MonoBehaviour
 
         //Countdown active timers
         strafeChangeTimer -= Time.deltaTime;
-        //pounceTimer -= Time.deltaTime;       TODO:Activate once StrafeMode is thoroughly tested and PounceMode is created
+        pounceTimer -= Time.deltaTime;       
     }
 
     //Helps Chupacabra keep a steady distance during strafe mode, moving away from player if they're too close and towards them if too far
@@ -120,7 +124,7 @@ public class ChupacabraFightAI : MonoBehaviour
     void PounceMode()
     {
         //Phase 1: Telegraph
-        if(pouncePhase == 1)
+        if (pouncePhase == 1)
         {
             //Briefly continue circling at a slowed speed to telegraph a pounce
             transform.right = player.transform.position - transform.position;
@@ -129,24 +133,93 @@ public class ChupacabraFightAI : MonoBehaviour
             //countdown phase
             betweenPounceTimer -= Time.deltaTime;
 
-            //phase switcher
-            if(betweenPounceTimer < 0)
+            //switch to phase 2
+            if (betweenPounceTimer < 0)
             {
                 pouncePhase = 2;
             }
         }
 
         //Phase 2:Setup
-        else if(pouncePhase == 2)
+        else if (pouncePhase == 2)
         {
-            //Store player's current position
-            //storedPosition = player.transform.currentPosition;
+            //reset passedPoint
+            passedPoint = false;
 
-            //Reset pounceTimer
+            //update staticPoint
+            staticPoint.transform.position = player.transform.position;
 
+            //Face the storedPosition
+            transform.right = staticPoint.transform.position - transform.position;
+
+            //Reset betweenPounceTimer
+            if (pounceCounter < pounceAmount)
+                betweenPounceTimer = timeBetweenPounces;
+            else
+                betweenPounceTimer = timeBetweenPounces * 2;
+
+            Debug.Log("Pounce Counter: " + pounceCounter);
+
+            //switch to phase 3
+            pouncePhase = 3;
+        }
+
+        //Phase 3:Pounce
+        else if (pouncePhase == 3)
+        {
+            //If cabra hasn't passed staticPoint, head towards it at pounce speed
+            if (passedPoint == false)
+            {
+                transform.Translate(Vector2.right * baseSpeed * pounceSpeedMod * Time.deltaTime);
+            }
+            //If it has, slow it down
+            else
+            {
+                transform.Translate(Vector2.right * baseSpeed * slowSpeedMod * Time.deltaTime);
+            }
+
+            //countdown
+            betweenPounceTimer -= Time.deltaTime;
+
+            //phase switch if phase is done
+            if (betweenPounceTimer < 0)
+            {
+                //if that was the last pounce, switch to phase 4
+                if (pounceCounter >= pounceAmount - 1)
+                {
+                    pouncePhase = 4;
+                }
+                //if not, go back to phase 2
+                else
+                {
+                    pounceCounter++;
+                    pouncePhase = 2;
+                }
+            }
+        }
+
+        //Phase 4:Resolution
+        else if (pouncePhase == 4)
+        {
+            //Reset the pounce counter
+            pounceCounter = 0;
+
+            //set pouncePhase to 1
+            pouncePhase = 1;
+
+            //reset the pounceTimer
+            pounceTimer = pounceTime + Random.Range(-pounceTimeVariance, pounceTimeVariance);
         }
 
 
+    }
+
+    void OnTriggerExit2D(Collider2D trigger)
+    {
+        Debug.Log("Triggered");
+        //slow down pounce if hitbox passed was staticPoint
+        if(trigger.gameObject.tag == "StaticPoint")
+            passedPoint = true;
     }
 
 }

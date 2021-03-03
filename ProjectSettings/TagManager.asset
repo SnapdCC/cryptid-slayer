@@ -7,6 +7,12 @@ TagManager:
   - item
   - rock
   - bullet
+  - StaticPoint
+  - Cryptid
+  - Box
+  - smoke
+  - clue
+  - hint
   layers:
   - Default
   - TransparentFX
