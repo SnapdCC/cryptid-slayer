@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
-    public Rigidbody2D rb;
+    public Rigidbody2D rbMove;
+    public Rigidbody2D rbRotate;
     public Animator animator;
     public Camera cam;
 
@@ -51,10 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        Vector2 mousedir = mousepos - rb.position;
+        rbMove.MovePosition(rbMove.position + movement * moveSpeed * Time.fixedDeltaTime);
+        Vector2 mousedir = mousepos - rbRotate.position;
         float angle = Mathf.Atan2(mousedir.y, mousedir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        // rbRotate.rotation = angle;
     }
 }
