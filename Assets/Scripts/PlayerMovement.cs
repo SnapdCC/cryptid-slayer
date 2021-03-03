@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-
+    public static float moveSpeed = 5f;
+    public float testspeed;
     public Rigidbody2D rb;
     public Animator animator;
     public Camera cam;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
+        testspeed = moveSpeed;
         
         if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
         {
