@@ -1,12 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
     int count;
-    GameObject[] gameObjects;
+    int hintcount;
+    public GameObject clue1;
+    public GameObject clue2;
+    public GameObject clue3;
+    public GameObject clue4;
+    public GameObject hinttext1;
+    public GameObject hinttext2;
+    public GameObject hinttext3;
     public GameObject border;
+    GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +25,36 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (count == 1)
+        {
+            clue1.SetActive(true);
+        }
+        if (count == 2)
+        {
+            clue2.SetActive(true);
+        }
+        if (count == 3)
+        {
+            clue3.SetActive(true);
+        }
         if (count == 4)
         {
             DestroyAllRocks();
+            clue4.SetActive(true);
+        }
+        if (hintcount == 1)
+        {
+            hinttext1.SetActive(true);
+        }
+        if (hintcount == 2)
+        {
+            hinttext1.SetActive(false);
+            hinttext2.SetActive(true);
+        }
+        if (hintcount == 3)
+        {
+            hinttext2.SetActive(false);
+            hinttext3.SetActive(true);
         }
     }
 
@@ -28,6 +64,11 @@ public class Pickup : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             count++;
+        }
+        if (collision.gameObject.CompareTag("hint"))
+        {
+            collision.gameObject.SetActive(false);
+            hintcount++;
         }
     }
 
