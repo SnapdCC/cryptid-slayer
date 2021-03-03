@@ -135,7 +135,7 @@ public class Test : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") == true)
         {
-            PlayerMovement.moveSpeed += 5;
+            //PlayerMovement.moveSpeed += 5;
         }
         
     }
