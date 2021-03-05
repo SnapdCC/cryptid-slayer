@@ -13,6 +13,9 @@ TagManager:
   - smoke
   - clue
   - hint
+  - chest
+  - ExplosionTrigger
+  - tnt
   layers:
   - Default
   - TransparentFX

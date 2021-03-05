@@ -8,12 +8,15 @@ public class Pickup : MonoBehaviour
     int count;
     int stop = 0;
     int hintcount;
+    public int tntcount;
+    public GameObject Explosion;
     public GameObject script;
     public GameObject clue1, clue2, clue3, clue4;
     public GameObject hinttext1, hinttext2, hinttext3;
     public GameObject hint1, hint2, hint3;
     public GameObject border;
     public GameObject cam1, cam2;
+    public GameObject chestclose, chestopen;
     GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +42,7 @@ public class Pickup : MonoBehaviour
         }
         if (count == 4)
         {
-            DestroyAllRocks();
+            //DestroyAllRocks();
             clue4.SetActive(true);
             CamMovement();
         }
@@ -60,6 +63,16 @@ public class Pickup : MonoBehaviour
             hinttext3.SetActive(true);
             hint3.SetActive(true);
         }
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chest"))
+        {
+            chestclose.SetActive(false);
+            chestopen.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +86,19 @@ public class Pickup : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             hintcount++;
+        }
+        if (collision.gameObject.CompareTag("tnt"))
+        {
+            collision.gameObject.SetActive(false);
+            tntcount++;
+        }
+        if (collision.gameObject.CompareTag("ExplosionTrigger"))
+        {
+            if (tntcount == 1)
+            {
+                Explosion.SetActive(true);
+                DestroyAllRocks();
+            }
         }
     }
 
