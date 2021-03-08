@@ -719,7 +719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122566376
 GameObject:
@@ -1044,7 +1044,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &146691394
 MonoBehaviour:
@@ -1495,7 +1495,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &184058016
 MonoBehaviour:
@@ -17603,7 +17603,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1001 &1728412067
 PrefabInstance:
@@ -18095,7 +18095,7 @@ Transform:
   m_Children:
   - {fileID: 346622482}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822367094
 GameObject:
@@ -18551,7 +18551,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1906052942
 MonoBehaviour:
@@ -18987,7 +18987,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1982919805
 MonoBehaviour:
@@ -19734,7 +19734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4780472414209645834, guid: 69bdf9d6598609a4a8dc48a7e8c1f2e3, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4780472414209645834, guid: 69bdf9d6598609a4a8dc48a7e8c1f2e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19845,6 +19845,18 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1756581478}
+    - target: {fileID: 2249231266639512042, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249231266639512042, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249231266639512042, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2249231266639512047, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
       propertyPath: clue1
       value: 
@@ -19927,7 +19939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -126.8465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19959,6 +19971,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249231267907911669, guid: e6b78b82b146ce04ea40c9edc4fcf4f6, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
