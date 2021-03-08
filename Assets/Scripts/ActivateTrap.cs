@@ -16,7 +16,7 @@ public class ActivateTrap : MonoBehaviour
         {
             go.SetActive(false);
         }
-        StartCoroutine(waitCoroutine());
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,18 +26,19 @@ public class ActivateTrap : MonoBehaviour
             go.SetActive(true);
             particlesystem.SetActive(true);
         }
-    
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(waitCoroutine());
+        }
 
     }
 
     IEnumerator waitCoroutine()
     {
-        yield return new WaitForSeconds(10000);
+        yield return new WaitForSeconds(1);
+        //Debug.Log("I waited!");
+        PlayerDeath.damagecount += 1;
+        //yield return null;
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        PlayerDeath.damagecount += .25f;
-        waitCoroutine();
-    }
 }

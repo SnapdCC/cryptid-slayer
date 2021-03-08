@@ -24,7 +24,7 @@ public class Test : MonoBehaviour
         if (piUi.OverAMenu( ))
             Debug.Log("You are over a menu");
         else
-            Debug.Log("You are not over a menu");
+            //Debug.Log("You are not over a menu");
         //Just open the normal Menu if A is pressed
         /*if (Input.GetKeyDown(KeyCode.A))
         {
