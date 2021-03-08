@@ -8,7 +8,7 @@ public class ActivateChup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chupacabra.SetActive(false);
+        chupacabra.GetComponent<ChupacabraFightAI>().enabled = false;
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class ActivateChup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        chupacabra.SetActive(true);
+        chupacabra.GetComponent<ChupacabraFightAI>().enabled = true;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movecam : MonoBehaviour
 {
-    public Transform endMarker = null; // create an empty gameobject and assign in inspector
+    public Transform endMarker = null;
 
     void Update()
     {
