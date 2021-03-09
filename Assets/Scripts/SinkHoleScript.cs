@@ -13,7 +13,7 @@ public class SinkHoleScript : MonoBehaviour
         if (collision.gameObject == player)
         {
             player.transform.position = new Vector3(1.175f, -1.157f, -2.87f);
-            stand.transform.position = new Vector3(1.175f, -1.157f, -2.87f);
+            //stand.transform.position = new Vector3(1.175f, -1.157f, -2.87f);
             PlayerDeath.damagecount++;
             sinkhole.enabled = true;
         }
