@@ -26855,11 +26855,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e8f869250bdd845868831dc8560316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 1720557175}
   baseSpeed: 5
   pounceSpeedMod: 1.8
   slowSpeedMod: 0.5
-  strafeDistance: 3
-  strafeThreshold: 0.5
+  strafeDistance: 5
+  strafeThreshold: 1
   strafeChangeTime: 2
   strafeChangeTimeVariance: 1
   pounceTime: 8
@@ -26874,7 +26875,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1720557168}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

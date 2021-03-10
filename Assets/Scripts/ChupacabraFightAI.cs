@@ -7,6 +7,9 @@ public class ChupacabraFightAI : MonoBehaviour
     GameObject player;
     private bool idle; //Trigger for idle state
 
+    [SerializeField]
+    private Rigidbody2D rb; //Rigidbody used for chupa physics
+
     public float baseSpeed = 5f; //Base speed of the Cabra
     public float pounceSpeedMod = 1.8f; //Modifier to base speed during pounce cycle. 1 is no change. Should be greater than 1
     public float slowSpeedMod = 0.5f; //Modifier to base speed during slowdown. 1 is no change. Should be less than 1.
@@ -34,6 +37,8 @@ public class ChupacabraFightAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb.freezeRotation = true;
+
         idle = false;
         player = GameObject.FindWithTag("Player");
 
@@ -49,7 +54,7 @@ public class ChupacabraFightAI : MonoBehaviour
 
     void Update()
     {
-        
+        rb.velocity = new Vector2(0.0f, 0.0f);
 
         //Idle trigger
         if(Input.GetKeyDown(KeyCode.I))
@@ -60,7 +65,7 @@ public class ChupacabraFightAI : MonoBehaviour
                 idle = true;
         }
 
-
+        
         
         //If not idle, figure out the current state of the cabra
         if (!idle)
@@ -206,6 +211,9 @@ public class ChupacabraFightAI : MonoBehaviour
 
             //set pouncePhase to 1
             pouncePhase = 1;
+
+            //reset betweenPounceTimer
+            betweenPounceTimer = timeBetweenPounces;
 
             //reset the pounceTimer
             pounceTimer = pounceTime + Random.Range(-pounceTimeVariance, pounceTimeVariance);
