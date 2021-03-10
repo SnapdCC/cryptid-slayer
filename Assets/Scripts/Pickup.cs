@@ -94,7 +94,7 @@ public class Pickup : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("ExplosionTrigger"))
         {
-            if (tntcount == 1)
+            if (tntcount == 1 && count == 4)
             {
                 Explosion.SetActive(true);
                 DestroyAllRocks();

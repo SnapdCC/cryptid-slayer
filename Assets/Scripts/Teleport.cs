@@ -11,8 +11,8 @@ public class Teleport : MonoBehaviour
     {
         if(collision.gameObject == player)
         {
-            player.transform.position = new Vector3(-27, -2.83f, -9.613f);
-            invsplayer.transform.position = new Vector3(-27, -2.83f, -9.613f);
+            player.transform.position = new Vector3(-27, -2.83f, 0);
+            //invsplayer.transform.position = new Vector3(-27, -2.83f, -9.613f);
         }
 
     }

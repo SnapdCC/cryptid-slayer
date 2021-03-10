@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Camera cam;
 
+    public SpriteRenderer playersprite;
+
     Vector2 movement;
     Vector2 mousepos;
 
@@ -35,7 +37,25 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             animator.SetBool("WalkingB", false);
+
+        if (Input.GetKey(KeyCode.A) == true)
+        {
+            animator.SetBool("WalkingLR", true);
+            playersprite.flipX = true;
+        }
+        else if (Input.GetKey(KeyCode.D) != true)
+        {
+            animator.SetBool("WalkingLR", false);
+            playersprite.flipX = false;
+        }
             
+
+        if (Input.GetKey(KeyCode.D) == true)
+        {
+            animator.SetBool("WalkingLR", true);
+        }
+        else if (Input.GetKey(KeyCode.A) != true)
+            animator.SetBool("WalkingLR", false);
 
         if (Input.GetKey(KeyCode.S) == true)
         {
