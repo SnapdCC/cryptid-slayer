@@ -8,6 +8,7 @@ public class WeaponController : MonoBehaviour
     public Transform firePoint;
     // public Transform firePointOuter;
     public GameObject bulletPrefab;
+    public GameObject trapPrefab;
     // public GameObject trapPrefab;
     public AudioSource gunsound;
     public float bulletForce = 20f;
@@ -41,6 +42,9 @@ public class WeaponController : MonoBehaviour
             Shoot();
             gunsound.Play();
         }
+        if(Input.GetKeyDown(KeyCode.R)){
+            PlaceTrap();
+        }
     }
     void Shoot()
     {
@@ -49,5 +53,8 @@ public class WeaponController : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         Destroy(bullet.gameObject, .5f);
+    }
+    void PlaceTrap(){
+        GameObject trap = Instantiate(trapPrefab, transform.position, Quaternion.identity);
     }
 }

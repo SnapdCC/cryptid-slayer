@@ -16,6 +16,7 @@ TagManager:
   - chest
   - ExplosionTrigger
   - tnt
+  - trap
   layers:
   - Default
   - TransparentFX

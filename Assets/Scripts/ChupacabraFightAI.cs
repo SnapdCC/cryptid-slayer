@@ -222,6 +222,14 @@ public class ChupacabraFightAI : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D trigger){
+        if(trigger.gameObject.tag == "trap"){
+            transform.parent = trigger.transform;
+            transform.parent.GetComponent<Trap>().Shut();
+            idle = true;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D trigger)
     {
         Debug.Log("Triggered");
