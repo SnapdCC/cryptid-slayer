@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject player;
-    public GameObject invsplayer;
+    public SpriteRenderer badtile;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +13,7 @@ public class Teleport : MonoBehaviour
         {
             player.transform.position = new Vector3(-27, -2.83f, 0);
             //invsplayer.transform.position = new Vector3(-27, -2.83f, -9.613f);
+            badtile.enabled = true;
         }
 
     }
