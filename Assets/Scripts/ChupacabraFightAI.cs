@@ -10,6 +10,9 @@ public class ChupacabraFightAI : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb; //Rigidbody used for chupa physics
 
+    [SerializeField]
+    private Animator anim;
+
     public float baseSpeed = 5f; //Base speed of the Cabra
     public float pounceSpeedMod = 1.8f; //Modifier to base speed during pounce cycle. 1 is no change. Should be greater than 1
     public float slowSpeedMod = 0.5f; //Modifier to base speed during slowdown. 1 is no change. Should be less than 1.
@@ -70,6 +73,7 @@ public class ChupacabraFightAI : MonoBehaviour
         //If not idle, figure out the current state of the cabra
         if (!idle)
         {
+            anim.SetBool("active", true);
             //If pounceTimer isn't 0, cabra is in strafe mode
             if(pounceTimer > 0)
             {
@@ -80,6 +84,10 @@ public class ChupacabraFightAI : MonoBehaviour
             {
                 PounceMode();
             }
+        }
+        else
+        {
+            anim.SetBool("active", false);
         }
     }
 
@@ -98,6 +106,15 @@ public class ChupacabraFightAI : MonoBehaviour
 
         //Move in the correct strafe direction
         transform.Translate(Vector2.down * baseSpeed * strafeDirection * Time.deltaTime);
+
+        if(strafeDirection > 0)
+        {
+            anim.SetBool("facingRight", true);
+        }
+        else
+        {
+            anim.SetBool("facingRight", false);
+        }
 
         //If the distance between cabra and player is off the strafeDistance by a magnitude greater than the strafeThreshold, call StrafeAdjustment
         if (Mathf.Abs(strafeDistance - Vector2.Distance(transform.position, player.transform.position)) > strafeThreshold) 
@@ -232,7 +249,6 @@ public class ChupacabraFightAI : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D trigger)
     {
-        Debug.Log("Triggered");
         //slow down pounce if hitbox passed was staticPoint
         if(trigger.gameObject.tag == "StaticPoint")
             passedPoint = true;
