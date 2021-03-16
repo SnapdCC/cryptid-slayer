@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float sprintMod = 1.5f;
+    public SpriteRenderer playersprite;
 
     public Rigidbody2D rbMove;
     public Rigidbody2D rbRotate;
@@ -27,10 +28,6 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.A))
-        {
-            //moveSpeed += 5;
-        }
         if (Input.GetKey(KeyCode.W) == true)
         {
             animator.SetBool("WalkingB", true);
@@ -38,6 +35,21 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             animator.SetBool("WalkingB", false);
+        }
+
+        if (Input.GetKey(KeyCode.A) == true)
+        {
+            animator.SetBool("WalkingLR", true);
+            playersprite.flipX = true;
+        }
+        if (Input.GetKey(KeyCode.D) == true)
+        {
+            animator.SetBool("WalkingLR", true);
+        }
+        else if (Input.GetKey(KeyCode.A) == false && Input.GetKey(KeyCode.D) == false)
+        {
+            animator.SetBool("WalkingLR", false);
+            playersprite.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.S) == true)
