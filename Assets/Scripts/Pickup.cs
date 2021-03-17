@@ -17,6 +17,7 @@ public class Pickup : MonoBehaviour
     public GameObject border;
     public GameObject cam1, cam2;
     public GameObject chestclose, chestopen;
+    public GameObject Jackalope;
     GameObject[] gameObjects;
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class Pickup : MonoBehaviour
             //DestroyAllRocks();
             clue4.SetActive(true);
             CamMovement();
+            Jackalope.SetActive(true);
         }
         if (hintcount == 1)
         {

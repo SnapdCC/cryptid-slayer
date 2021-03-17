@@ -61,33 +61,33 @@ public class BigfootFightAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         //Finite State Machine
-        if (currentState = State.IDLE)
+        if (currentState == State.IDLE)
         {
             Idle();
         }
-        else if (currentState = State.STALKING)
+        else if (currentState == State.STALKING)
         {
             Stalking();
         }
-        else if (currentState = State.SLASH)
+        else if (currentState == State.SLASH)
         {
             Slash();
         }
-        else if(currentState = State.CHARGE)
+        else if(currentState == State.CHARGE)
         {
             Charge();
         }
-        else if(currentState = State.STUCK)
+        else if(currentState == State.STUCK)
         {
             Stuck();
         }
-        else if(currentState = State.TRAP_CRUSH)
+        else if(currentState == State.TRAP_CRUSH)
         {
             TrapCrush();
         }
-        */
+        
     }
 
     void Idle()
