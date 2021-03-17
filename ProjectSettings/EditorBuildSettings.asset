@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 4b5c50a4a01fb1c47b75b5e89bf4ece1
+  - enabled: 1
+    path: Assets/Scenes/JackalopeLevel.unity
+    guid: 8c219d9314b741e48a0406b00b4de59d
+  - enabled: 1
+    path: Assets/Scenes/JackalopeLSilhouette.unity
+    guid: 5098a900d74703c4a8455a803dac0952
   m_configObjects: {}

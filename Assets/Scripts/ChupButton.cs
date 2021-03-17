@@ -32,4 +32,8 @@ public class ChupButton : MonoBehaviour
     {
         SceneManager.LoadScene("Silhouette");
     }
+    public void JackalopeLSillouette()
+    {
+        SceneManager.LoadScene("JackalopeLSilhouette");
+    }
 }
