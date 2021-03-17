@@ -61,7 +61,7 @@ public class BigfootFightAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
         //Finite State Machine
         if (currentState = State.IDLE)
         {
@@ -87,7 +87,7 @@ public class BigfootFightAI : MonoBehaviour
         {
             TrapCrush();
         }
-
+        */
     }
 
     void Idle()
@@ -143,7 +143,7 @@ public class BigfootFightAI : MonoBehaviour
         //Afterwards, set state to Stalking
     }
 
-    OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
 
     }
