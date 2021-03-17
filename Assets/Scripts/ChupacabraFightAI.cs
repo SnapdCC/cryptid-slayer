@@ -5,13 +5,16 @@ using UnityEngine;
 public class ChupacabraFightAI : MonoBehaviour
 {
     GameObject player;
-    private bool idle; //Trigger for idle state
+    private float idle; //Trigger for idle state
+    public float trappedTime = 5f;
 
     [SerializeField]
     private Rigidbody2D rb; //Rigidbody used for chupa physics
 
     [SerializeField]
     private Animator anim;
+    [SerializeField]
+    private Transform child;
 
     [SerializeField]
     private SpriteRenderer rend;
@@ -45,7 +48,7 @@ public class ChupacabraFightAI : MonoBehaviour
     {
         rb.freezeRotation = true;
 
-        idle = false;
+        idle = 0f;
         player = GameObject.FindWithTag("Player");
 
         strafeChangeTimer = strafeChangeTime + Random.Range(-strafeChangeTimeVariance, strafeChangeTimeVariance);
@@ -65,16 +68,13 @@ public class ChupacabraFightAI : MonoBehaviour
         //Idle trigger
         if(Input.GetKeyDown(KeyCode.I))
         {
-            if(idle)
-                idle = false;
-            else
-                idle = true;
+            idle = trappedTime;
         }
 
         
         
         //If not idle, figure out the current state of the cabra
-        if (!idle)
+        if (idle==0)
         {
             anim.SetBool("active", true);
             //If pounceTimer isn't 0, cabra is in strafe mode
@@ -90,6 +90,7 @@ public class ChupacabraFightAI : MonoBehaviour
         }
         else
         {
+            idle = Mathf.Max(idle - Time.deltaTime, 0);
             anim.SetBool("active", false);
         }
     }
@@ -99,6 +100,7 @@ public class ChupacabraFightAI : MonoBehaviour
     {
         //Make cabra face the player
         transform.right = player.transform.position - transform.position;
+        child.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.z);
 
         //Checks if it's time to change directions
         if(strafeChangeTimer < 0)
@@ -153,6 +155,7 @@ public class ChupacabraFightAI : MonoBehaviour
         {
             //Briefly continue circling at a slowed speed to telegraph a pounce
             transform.right = player.transform.position - transform.position;
+            child.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.z);
             transform.Translate(Vector2.down * baseSpeed * slowSpeedMod * strafeDirection * Time.deltaTime);
 
             //countdown phase
@@ -176,6 +179,7 @@ public class ChupacabraFightAI : MonoBehaviour
 
             //Face the storedPosition
             transform.right = staticPoint.transform.position - transform.position;
+            child.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.z);
 
             //Reset betweenPounceTimer
             if (pounceCounter < pounceAmount - 1)
@@ -244,9 +248,8 @@ public class ChupacabraFightAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D trigger){
         if(trigger.gameObject.tag == "trap"){
-            transform.parent = trigger.transform;
-            transform.parent.GetComponent<Trap>().Shut();
-            idle = true;
+            trigger.GetComponent<Trap>().Shut();
+            idle = trappedTime;
         }
     }
 

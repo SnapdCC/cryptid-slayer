@@ -23,6 +23,7 @@ public class Trap : MonoBehaviour
         if(!isShut){
             trapSprite.sprite = trapClose;
             isShut = true;
+            Destroy(gameObject, 5f);
         }
     }
     // Update is called once per frame

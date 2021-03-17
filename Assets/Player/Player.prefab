@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4795992895377631534}
   bulletPrefab: {fileID: 3685711591979288710, guid: 092be49d47544444cb38c1ffaf4ce63c, type: 3}
-  trapPrefab: {fileID: 0}
+  trapPrefab: {fileID: 97242724439222003, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
   gunsound: {fileID: 0}
   bulletForce: 20
 --- !u!1 &4795992895377631533
