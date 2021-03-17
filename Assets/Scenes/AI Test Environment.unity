@@ -216,9 +216,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1147517496}
   - component: {fileID: 1147517495}
-  - component: {fileID: 1147517494}
   - component: {fileID: 1147517497}
   - component: {fileID: 1147517498}
+  - component: {fileID: 1147517494}
   m_Layer: 0
   m_Name: Test Sprites_enemy
   m_TagString: Untagged
@@ -235,21 +235,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147517493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80e8f869250bdd845868831dc8560316, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ecba1379f94d3a4faa8ed974125a3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  pounceSpeedMod: 2
-  slowSpeedMod: 0.5
-  strafeDistance: 3
-  strafeThreshold: 0.5
-  strafeChangeTime: 4
-  strafeChangeTimeVariance: 1
-  pounceTime: 8
-  pounceTimeVariance: 2
-  pounceAmount: 3
-  timeBetweenPounces: 1
-  betweenPounceTimer: 0
+  rb: {fileID: 1147517497}
 --- !u!212 &1147517495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -516,9 +505,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 1826791115}
+  sprintMod: 1.5
+  playersprite: {fileID: 0}
+  rbMove: {fileID: 0}
+  rbRotate: {fileID: 0}
   animator: {fileID: 0}
   cam: {fileID: 0}
+  sprinting: 0
 --- !u!50 &1826791115
 Rigidbody2D:
   serializedVersion: 4

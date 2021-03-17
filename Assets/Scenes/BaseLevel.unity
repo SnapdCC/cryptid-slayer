@@ -16017,6 +16017,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4795992895566036748, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4795992895566036749, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.18
@@ -24922,6 +24926,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8163788024478046688, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
   m_PrefabInstance: {fileID: 8163788022825322385}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1720557174 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8163788024478046691, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
+  m_PrefabInstance: {fileID: 8163788022825322385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1728412067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29114,6 +29123,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8163788024478046691, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163788024478046691, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8163788024478046692, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
       propertyPath: wintext
       value: 
@@ -29122,5 +29139,9 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1720557173}
+    - target: {fileID: 8163788024478046695, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 1720557174}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}

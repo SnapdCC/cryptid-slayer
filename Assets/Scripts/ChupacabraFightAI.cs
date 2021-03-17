@@ -13,6 +13,9 @@ public class ChupacabraFightAI : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    [SerializeField]
+    private SpriteRenderer rend;
+
     public float baseSpeed = 5f; //Base speed of the Cabra
     public float pounceSpeedMod = 1.8f; //Modifier to base speed during pounce cycle. 1 is no change. Should be greater than 1
     public float slowSpeedMod = 0.5f; //Modifier to base speed during slowdown. 1 is no change. Should be less than 1.
@@ -109,11 +112,11 @@ public class ChupacabraFightAI : MonoBehaviour
 
         if(strafeDirection > 0)
         {
-            anim.SetBool("facingRight", true);
+            rend.flipY = false;
         }
         else
         {
-            anim.SetBool("facingRight", false);
+            rend.flipY = true;
         }
 
         //If the distance between cabra and player is off the strafeDistance by a magnitude greater than the strafeThreshold, call StrafeAdjustment
