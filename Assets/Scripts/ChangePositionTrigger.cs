@@ -11,16 +11,8 @@ public class ChangePositionTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            spawnman.GetComponent<SpawnManager>().newspawn();
-            //activatetrigger = true;
+            spawnman.GetComponent<SpawnManager>().SpawnObject();
         }
 
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-        {
-            activatetrigger = false;
-        }
     }
 }

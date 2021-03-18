@@ -6,38 +6,20 @@ public class SpawnManager : MonoBehaviour
 {
    public List<GameObject> possibleSpawnPoints = new List<GameObject>();
    public GameObject jackalopePrefab;
-   private int chosenSpawnPoint;
-   private int prevSpawnPoint;
+   int prevSpawnIndex = -1;
 
 
-
-
-
-    void Update()
+    
+    public void SpawnObject()
     {
-        if (ChangePositionTrigger.activatetrigger == true)
+        int spawnPointIndex;
+        do
         {
-            newspawn();
-        }
+            spawnPointIndex = Random.Range(0, possibleSpawnPoints.Count);
+        } while (prevSpawnIndex == spawnPointIndex && possibleSpawnPoints.Count > 1);
+        prevSpawnIndex = spawnPointIndex;
+        jackalopePrefab.transform.position = (possibleSpawnPoints[spawnPointIndex].transform.position);
     }
 
-    public void newspawn()
-    {
-        
-        if (prevSpawnPoint == chosenSpawnPoint && possibleSpawnPoints.Count > 1)
-        {
-            prevSpawnPoint = chosenSpawnPoint;
-            chosenSpawnPoint = Random.Range(0, possibleSpawnPoints.Count);
-            jackalopePrefab.transform.position = (possibleSpawnPoints[chosenSpawnPoint].transform.position);
 
-        }
-        if (prevSpawnPoint != chosenSpawnPoint)
-        {
-            chosenSpawnPoint = Random.Range(0, possibleSpawnPoints.Count);
-            jackalopePrefab.transform.position = (possibleSpawnPoints[chosenSpawnPoint].transform.position);
-        }
-        
-    }
-         
-     
 }
