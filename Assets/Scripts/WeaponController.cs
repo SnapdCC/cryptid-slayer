@@ -37,13 +37,15 @@ public class WeaponController : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Shoot();
-            gunsound.Play();
+        if(Time.timeScale>0){
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                Shoot();
+                gunsound.Play();
+            }
+            if(Input.GetKeyDown(KeyCode.R)){
+                PlaceTrap();
         }
-        if(Input.GetKeyDown(KeyCode.R)){
-            PlaceTrap();
         }
     }
     void Shoot()

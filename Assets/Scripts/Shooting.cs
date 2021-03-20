@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E)&&Time.timeScale>0)
         {
             Shoot();
             gunsound.Play();
@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
     }
     void PlaceTrap()
     {
-        Quaternion angle = Quaternion.Euler(0f, 0f, offset);
+        Quaternion angle = Quaternion.Euler(0f, 0f, 0f);
         GameObject trap = Instantiate(trapPrefab, firePointOuter.position, Quaternion.identity);
         Rigidbody2D rb = trap.GetComponent<Rigidbody2D>();
     }
