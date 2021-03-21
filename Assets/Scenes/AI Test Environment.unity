@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1147517494}
   m_Layer: 0
   m_Name: Test Sprites_enemy
-  m_TagString: Untagged
+  m_TagString: Cryptid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,6 +239,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1147517497}
+  baseSpeed: 2
+  topSpeedMod: 3
+  slashDamage: 2
+  chargeDamage: 1
+  chargeWaitTime: 8
+  chargeWaitTimeVariance: 2
+  stuckTime: 5
+  chargeTrackingCutoff: 3
 --- !u!212 &1147517495
 SpriteRenderer:
   m_ObjectHideFlags: 0

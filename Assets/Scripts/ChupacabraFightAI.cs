@@ -63,7 +63,15 @@ public class ChupacabraFightAI : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(0.0f, 0.0f);
+
+        rb.velocity = new Vector2(0.0f, 0.0f); //Constantly removes any velocity to combat the physics system. Remove if converting to using physics instead of translation
+
+        //TODO::Create a funtion to keep the chupa's rotation within the bounds of 0 and 360 without affecting it's actual rotation
+        //first, make sure the rotation is positive
+
+        //then, use fmod to force the bonds between 0 and 360
+
+        anim.SetFloat("rotation", transform.rotation.eulerAngles.z); //gives the chupa's current rotation to the animator for animating reasons
 
         //Idle trigger
         if(Input.GetKeyDown(KeyCode.I))
@@ -112,13 +120,16 @@ public class ChupacabraFightAI : MonoBehaviour
         //Move in the correct strafe direction
         transform.Translate(Vector2.down * baseSpeed * strafeDirection * Time.deltaTime);
 
+        //Change sprite rendering based on which way chupa is facing
         if(strafeDirection > 0)
         {
-            rend.flipY = false;
+            anim.SetBool("runningClockwise", false);
+            //rend.flipY = false;  //This parameter is outdated. Will remove soon 
         }
         else
         {
-            rend.flipY = true;
+            anim.SetBool("runningClockwise", true);
+            //rend.flipY = true;
         }
 
         //If the distance between cabra and player is off the strafeDistance by a magnitude greater than the strafeThreshold, call StrafeAdjustment
@@ -258,6 +269,12 @@ public class ChupacabraFightAI : MonoBehaviour
         //slow down pounce if hitbox passed was staticPoint
         if(trigger.gameObject.tag == "StaticPoint")
             passedPoint = true;
+    }
+
+    //recursive function that guaruntees that the chupa's rotation is positive
+    void MakeRotationPositive()
+    {
+
     }
 
 }
