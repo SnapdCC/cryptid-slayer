@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Silhouette.unity
     guid: 956b9760a6d013b49b5fe806d5e19001
   - enabled: 1
-    path: Assets/Scenes/BaseLevel.unity
+    path: Assets/Scenes/ChupacabraLevel.unity
     guid: 3a2d869d7425c3547afde0c2869e065f
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity

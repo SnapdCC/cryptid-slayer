@@ -8,11 +8,14 @@ public class Health : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject wintext;
-    public static float health;
+    
+    float health;
+    [SerializeField]
+    public float MaxHealth = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        health = 2.0f;
+        health = MaxHealth;
     }
 
     // Update is called once per frame
@@ -26,14 +29,19 @@ public class Health : MonoBehaviour
 
         }
     }
-
+    public float GetHealth(){
+        return health;
+    }
+    public float GetMax(){
+        return MaxHealth;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("bullet"))
         {
             //Destroy(collision.gameObject);
             
-            health = health - .25f;
+            health = health - .125f;
         }
     }
 }
