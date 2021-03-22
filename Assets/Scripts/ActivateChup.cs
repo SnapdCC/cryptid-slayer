@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ActivateChup : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject healthBar;
+
     public GameObject chupacabra;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class ActivateChup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        healthBar.SetActive(true);
         chupacabra.GetComponent<ChupacabraFightAI>().enabled = true;
     }
 }

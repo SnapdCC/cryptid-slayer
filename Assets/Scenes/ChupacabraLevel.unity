@@ -4372,6 +4372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5aea97a0c49a4284d39e584c85258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 1761578573}
   chupacabra: {fileID: 1720557168}
 --- !u!1001 &281105873
 PrefabInstance:
@@ -25880,12 +25881,12 @@ GameObject:
   - component: {fileID: 1761578575}
   - component: {fileID: 1761578577}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1761578574
 RectTransform:
   m_ObjectHideFlags: 0
