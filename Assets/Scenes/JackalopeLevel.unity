@@ -2963,7 +2963,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.015135169}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2974,7 +2974,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.02}
+  m_Size: {x: 0.96, y: 0.98972964}
   m_EdgeRadius: 0
 --- !u!114 &1131422417
 MonoBehaviour:
@@ -4697,6 +4697,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 97242724439222001, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
+      propertyPath: spawnmanager
+      value: 
+      objectReference: {fileID: 1605229483}
     - target: {fileID: 97242724439222003, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
       propertyPath: m_Name
       value: Trap

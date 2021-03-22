@@ -17,6 +17,7 @@ TagManager:
   - ExplosionTrigger
   - tnt
   - trap
+  - Jackalope
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ public class Trap : MonoBehaviour
     private Sprite trapClose; 
     private bool isShut;
     public float catchTime = 5.0f;
+    public GameObject spawnmanager; 
     // Start is called before the first frame update
     void Start()
     {
@@ -33,4 +34,15 @@ public class Trap : MonoBehaviour
             Shut();
         }   
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Jackalope"))
+        {
+            spawnmanager.GetComponent<SpawnManager>().enabled = false;
+        }
+    }
+
+
 }
+
