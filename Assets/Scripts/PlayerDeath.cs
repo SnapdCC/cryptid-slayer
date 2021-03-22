@@ -10,18 +10,14 @@ public class PlayerDeath : MonoBehaviour
     bool activetrap;
     public float testdamage;
     public static float damagecount; // damagecount variable records # of times player has been hit
-    public Image FullHeart1; // Images for full, half, 3/4, and 1/4 hearts
-    public Image FullHeart2;
-    public Image FullHeart3;
-    public Image ThreeQuarterHeart1;
-    public Image ThreeQuarterHeart2;
-    public Image ThreeQuarterHeart3;
-    public Image HalfHeart1;
-    public Image HalfHeart2;
-    public Image HalfHeart3;
-    public Image QuarterHeart1;
-    public Image QuarterHeart2;
-    public Image QuarterHeart3;
+    public Image Heart1; // Images for full, half, 3/4, and 1/4 hearts
+    public Image Heart2;
+    public Image Heart3;
+
+    public Sprite HeartFull;
+    public Sprite HeartMore;
+    public Sprite HeartHalf;
+    public Sprite HeartLess;
     
     // Start is called before the first frame update
     void Start()
@@ -67,62 +63,88 @@ public class PlayerDeath : MonoBehaviour
     {
         if (damagecount == 1)
         {
-            FullHeart1.enabled = false;
-            ThreeQuarterHeart1.enabled = true;
+            //2 Full, 1 3/4
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartFull;
+            Heart3.sprite = HeartMore;
         }
         if (damagecount == 2)
         {
-            ThreeQuarterHeart1.enabled = false;
-            HalfHeart1.enabled = true;
+            //2 full, 1 1/2
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartFull;
+            Heart3.sprite = HeartHalf;
         }
         if (damagecount == 3)
         {
-            HalfHeart1.enabled = false;
-            QuarterHeart1.enabled = true;
+            //2 Full, 1 1/4
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartFull;
+            Heart3.sprite = HeartLess;
         }
         if (damagecount == 4)
         {
-            QuarterHeart1.enabled = false;
+            //2 Full, 1 Empty
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartFull;
+            Heart3.enabled =false;
         }
         if (damagecount == 5)
         {
-            FullHeart2.enabled = false;
-            ThreeQuarterHeart2.enabled = true;
+            //1 Full, 1 3/4
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartMore;
+            Heart3.enabled =false;
         }
         if (damagecount == 6)
         {
-            ThreeQuarterHeart2.enabled = false;
-            HalfHeart2.enabled = true;
+            //1 Full, 1 1/2
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartHalf;
+            Heart3.enabled =false;
         }
         if (damagecount == 7)
         {
-            HalfHeart2.enabled = false;
-            QuarterHeart2.enabled = true;
+            //1 Full, 1 1/4
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartLess;
+            Heart3.enabled =false;
         }
         if (damagecount == 8)
         {
-            QuarterHeart2.enabled = false;
+            //1 Full, 2 Empty
+            Heart1.sprite = HeartFull;
+            Heart2.enabled = false;
+            Heart3.enabled =false;
         }
         if (damagecount == 9)
         {
-            FullHeart3.enabled = false;
-            ThreeQuarterHeart3.enabled = true;
+            //1 3/4
+            Heart1.sprite = HeartMore;
+            Heart2.enabled = false;
+            Heart3.enabled = false;
         }
         if (damagecount == 10)
         {
-            ThreeQuarterHeart3.enabled = false;
-            HalfHeart3.enabled = true;
+            //1 1/2
+            Heart1.sprite = HeartHalf;
+            Heart2.enabled = false;
+            Heart3.enabled = false;
         }
         if (damagecount == 11)
         {
-            HalfHeart3.enabled = false;
-            QuarterHeart3.enabled = true;
+            //1 1/4
+            Heart1.sprite = HeartLess;
+            Heart2.enabled = false;
+            Heart3.enabled = false;
         }
         if (damagecount == 12)
         {
-            QuarterHeart3.enabled = false;
+            //3 Empty, Dead
+            Heart1.enabled = false;
+            Heart2.enabled = false;
+            Heart3.enabled = false;
+            SceneManager.LoadScene("LoseScreen");
         }
-
-
     }
 }
