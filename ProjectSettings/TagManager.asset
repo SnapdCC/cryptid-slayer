@@ -18,6 +18,7 @@ TagManager:
   - tnt
   - trap
   - Jackalope
+  - trappickup
   layers:
   - Default
   - TransparentFX

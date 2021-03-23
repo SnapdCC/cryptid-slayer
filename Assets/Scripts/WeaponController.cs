@@ -44,8 +44,12 @@ public class WeaponController : MonoBehaviour
                 gunsound.Play();
             }
             if(Input.GetKeyDown(KeyCode.R)){
-                PlaceTrap();
-        }
+                if(Pickup.trappickupcount == 1)
+                {
+                    PlaceTrap();
+                }
+                
+            }
         }
     }
     void Shoot()

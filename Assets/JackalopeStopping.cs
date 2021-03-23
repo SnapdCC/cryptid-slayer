@@ -12,7 +12,7 @@ public class JackalopeStopping : MonoBehaviour
     }
 
 
-    void OnTriggerStay2D(Collider2D trigger)
+    void OnTriggerEnter2D(Collider2D trigger)
     {
         Debug.Log("Got caught");
         Debug.Log(trigger.gameObject.tag);

@@ -35,11 +35,13 @@ public class Trap : MonoBehaviour
         }   
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Jackalope"))
+        if (collision.gameObject.tag.Equals("Jackalope"))
         {
-            spawnmanager.GetComponent<SpawnManager>().enabled = false;
+            Debug.Log("it worked!");
+            Destroy(spawnmanager);
+
         }
     }
 
