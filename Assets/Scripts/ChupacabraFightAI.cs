@@ -68,6 +68,10 @@ public class ChupacabraFightAI : MonoBehaviour
 
         //TODO::Create a funtion to keep the chupa's rotation within the bounds of 0 and 360 without affecting it's actual rotation
         //first, make sure the rotation is positive
+        /*if(transform.rotation.eulerAngles.z < 0f)
+        {
+            MakeRotationPositive();
+        }*/
 
         //then, use fmod to force the bonds between 0 and 360
 
@@ -274,7 +278,15 @@ public class ChupacabraFightAI : MonoBehaviour
     //recursive function that guaruntees that the chupa's rotation is positive
     void MakeRotationPositive()
     {
+        //modify the rotation by one full rotation
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, transform.rotation.eulerAngles.z + 360);
 
+        //If the rotation isn't yet positive, do it again
+
+        if(transform.rotation.eulerAngles.z < 0)
+        {
+            MakeRotationPositive();
+        }
     }
 
 }
