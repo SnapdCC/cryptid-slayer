@@ -23,4 +23,9 @@ public class JackalopeStopping : MonoBehaviour
             spawnmanager.GetComponent<SpawnManager>().enabled = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
 }
