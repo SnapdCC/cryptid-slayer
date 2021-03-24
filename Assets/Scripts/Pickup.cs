@@ -19,6 +19,7 @@ public class Pickup : MonoBehaviour
     public GameObject chestclose, chestopen;
     public GameObject Jackalope;
     GameObject[] gameObjects;
+    public GameObject spawnmanager;
     // Start is called before the first frame update
     void Start()
     {

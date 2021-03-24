@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JackalopeStopping : MonoBehaviour
 {
     public GameObject spawnmanager;
+    public bool jackalope_caught;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +22,16 @@ public class JackalopeStopping : MonoBehaviour
         {
             Debug.Log("Does if work");
             trigger.GetComponent<Trap>().Shut();
-            spawnmanager.GetComponent<SpawnManager>().enabled = false;
+            jackalope_caught = true;
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (jackalope_caught == true && collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("JackalopeWin");
+        }
     }
 }

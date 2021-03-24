@@ -26,7 +26,15 @@ public class ChupButton : MonoBehaviour
 
     public void ChupacabraLevel()
     {
-        SceneManager.LoadScene("BaseLevel");
+        SceneManager.LoadScene("ChupacabraLevel");
+    }
+    public void JackalopeLevel()
+    {
+        SceneManager.LoadScene("JackalopeLevel");
+    }
+    public void MapScreen()
+    {
+        SceneManager.LoadScene("MapScreen");
     }
     public void ChupacabraLSillouette()
     {
