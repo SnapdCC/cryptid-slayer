@@ -68,12 +68,13 @@ public class ChupacabraFightAI : MonoBehaviour
 
         //TODO::Create a funtion to keep the chupa's rotation within the bounds of 0 and 360 without affecting it's actual rotation
         //first, make sure the rotation is positive
-        /*if(transform.rotation.eulerAngles.z < 0f)
+        if(transform.rotation.eulerAngles.z < 0f)
         {
             MakeRotationPositive();
-        }*/
+        }
 
         //then, use fmod to force the bonds between 0 and 360
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, transform.rotation.eulerAngles.z % 360);
 
         anim.SetFloat("rotation", transform.rotation.eulerAngles.z); //gives the chupa's current rotation to the animator for animating reasons
 
@@ -82,11 +83,9 @@ public class ChupacabraFightAI : MonoBehaviour
         {
             idle = trappedTime;
         }
-
-        
         
         //If not idle, figure out the current state of the cabra
-        if (idle==0)
+        if (idle <= 0f)
         {
             anim.SetBool("active", true);
             //If pounceTimer isn't 0, cabra is in strafe mode

@@ -30158,7 +30158,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1866212771769308820, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8163788024478046689, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
       propertyPath: m_Name
@@ -30218,7 +30218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8163788024478046691, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8163788024478046692, guid: 22570cf923fb5e04c97cf3009222f1d6, type: 3}
       propertyPath: wintext
