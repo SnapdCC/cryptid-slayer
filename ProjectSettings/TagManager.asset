@@ -19,6 +19,7 @@ TagManager:
   - trap
   - Jackalope
   - trappickup
+  - TumbleWeed
   layers:
   - Default
   - TransparentFX
