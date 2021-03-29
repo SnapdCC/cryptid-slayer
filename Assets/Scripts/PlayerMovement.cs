@@ -45,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D) == true)
         {
             animator.SetBool("WalkingLR", true);
+            playersprite.flipX = false;
         }
         else if (Input.GetKey(KeyCode.A) == false && Input.GetKey(KeyCode.D) == false)
         {
             animator.SetBool("WalkingLR", false);
-            playersprite.flipX = false;
         }
 
         if (Input.GetKey(KeyCode.S) == true)
