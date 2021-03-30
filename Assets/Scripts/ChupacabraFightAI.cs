@@ -7,6 +7,7 @@ public class ChupacabraFightAI : MonoBehaviour
     GameObject player;
     private float idle; //Trigger for idle state
     public float trappedTime = 5f;
+    public AudioSource pouncesound;
 
     [SerializeField]
     private Rigidbody2D rb; //Rigidbody used for chupa physics
@@ -213,6 +214,7 @@ public class ChupacabraFightAI : MonoBehaviour
             //If cabra hasn't passed staticPoint, head towards it at pounce speed
             if (passedPoint == false)
             {
+                pouncesound.Play();
                 transform.Translate(Vector2.right * baseSpeed * pounceSpeedMod * Time.deltaTime);
             }
             //If it has, slow it down
@@ -244,6 +246,7 @@ public class ChupacabraFightAI : MonoBehaviour
         //Phase 4:Resolution
         else if (pouncePhase == 4)
         {
+            pouncesound.Stop();
             //Reset the pounce counter
             pounceCounter = 0;
 
