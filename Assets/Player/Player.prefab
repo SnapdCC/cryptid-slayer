@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 4795992895566036791}
   - component: {fileID: 4795992895566036790}
   - component: {fileID: 4795992895566036789}
+  - component: {fileID: 8976265535455732117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   sprintMod: 1.5
+  playersprite: {fileID: 0}
   rbMove: {fileID: 4795992895566036747}
   rbRotate: {fileID: 4795992895566036747}
   animator: {fileID: 4795992895566036745}
@@ -405,7 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56976775a0f55041813933f3875fd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tntcount: 0
   Explosion: {fileID: 0}
   script: {fileID: 0}
   clue1: {fileID: 0}
@@ -423,6 +424,8 @@ MonoBehaviour:
   cam2: {fileID: 0}
   chestclose: {fileID: 0}
   chestopen: {fileID: 0}
+  Jackalope: {fileID: 0}
+  spawnmanager: {fileID: 0}
 --- !u!114 &4795992895566036790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,18 +439,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testdamage: 0
-  FullHeart1: {fileID: 0}
-  FullHeart2: {fileID: 0}
-  FullHeart3: {fileID: 0}
-  ThreeQuarterHeart1: {fileID: 0}
-  ThreeQuarterHeart2: {fileID: 0}
-  ThreeQuarterHeart3: {fileID: 0}
-  HalfHeart1: {fileID: 0}
-  HalfHeart2: {fileID: 0}
-  HalfHeart3: {fileID: 0}
-  QuarterHeart1: {fileID: 0}
-  QuarterHeart2: {fileID: 0}
-  QuarterHeart3: {fileID: 0}
+  Heart1: {fileID: 0}
+  Heart2: {fileID: 0}
+  Heart3: {fileID: 0}
+  HeartFull: {fileID: 0}
+  HeartMore: {fileID: 0}
+  HeartHalf: {fileID: 0}
+  HeartLess: {fileID: 0}
 --- !u!114 &4795992895566036789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +464,20 @@ MonoBehaviour:
   trapPrefab: {fileID: 0}
   gunsound: {fileID: 0}
   bulletForce: 20
+--- !u!114 &8976265535455732117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795992895566036788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b9450cab2be854d8e57c4d020b480a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  List: []
+  panel: {fileID: 0}
 --- !u!1001 &2780712100470882287
 PrefabInstance:
   m_ObjectHideFlags: 0
