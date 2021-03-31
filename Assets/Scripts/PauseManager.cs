@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pausePanel;
+    private GameObject pausePanel, controlPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +39,13 @@ public class PauseManager : MonoBehaviour
     }
     public void MainMenuButton(){
         SceneManager.LoadScene(0);
+    }
+    public void ControlsButton()
+    {
+        controlPanel.SetActive(true);
+    }
+    public void BackButton()
+    {
+        controlPanel.SetActive(false);
     }
 }
