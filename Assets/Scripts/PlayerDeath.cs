@@ -51,16 +51,29 @@ public class PlayerDeath : MonoBehaviour
 
         private void OnCollisionEnter2D(Collision2D collision) // Detects collisions between player and cryptid
     {
-        if (collision.gameObject.tag.Equals("Cryptid"))
+        GameObject body = collision.gameObject;
+        Debug.Log(body.tag);
+        if (body.tag.Equals("Cryptid"))
         {
             damagecount++;
             //health = health - .25f;
+        }
+        if (body.tag.Equals("Health"))
+        {
+            
+            damagecount=0;
+            Destroy(body);
         }
         
     }
     
         void HeartManagement() // For each damage count the correct heart images are displayed based on the count
     {
+        if(damagecount == 0) {
+            Heart1.sprite = HeartFull;
+            Heart2.sprite = HeartFull;
+            Heart3.sprite = HeartFull;
+        }
         if (damagecount == 1)
         {
             //2 Full, 1 3/4

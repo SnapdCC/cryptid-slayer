@@ -20,6 +20,7 @@ TagManager:
   - Jackalope
   - trappickup
   - TumbleWeed
+  - Health
   layers:
   - Default
   - TransparentFX
