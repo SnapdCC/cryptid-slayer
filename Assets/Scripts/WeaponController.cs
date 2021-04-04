@@ -12,6 +12,9 @@ public class WeaponController : MonoBehaviour
     // public GameObject trapPrefab;
     public AudioSource gunsound;
     public float bulletForce = 20f;
+    [SerializeField]
+    float reloadTime = .25f;
+    float reload = 0f;
     float offset = 0f;
     void Start()
     {
@@ -37,8 +40,9 @@ public class WeaponController : MonoBehaviour
     }
     void Update()
     {
+        reload=Mathf.Max(0f, reload-Time.deltaTime);
         if(Time.timeScale>0){
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E)&&reload==0)
             {
                 Shoot();
                 gunsound.Play();
