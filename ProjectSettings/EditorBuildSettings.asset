@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JackalopeWin.unity
     guid: 733ae6c8b8db88e48a6d2cfe2a25c244
+  - enabled: 1
+    path: Assets/Scenes/BigfootLSilhouette.unity
+    guid: d3393fdccc184d24dac2d7d96b6792f9
+  - enabled: 1
+    path: Assets/Scenes/BigfootLevel.unity
+    guid: 2a423fb1628ef38428dea0d3559fca1c
   m_configObjects: {}
