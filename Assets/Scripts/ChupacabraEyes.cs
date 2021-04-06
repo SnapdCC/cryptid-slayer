@@ -20,7 +20,7 @@ public class ChupacabraEyes : MonoBehaviour
                 foreach (GameObject item in List)
             {
                 item_material = item.GetComponent<Renderer>().material;
-                item_material.color = Color.blue;
+                item_material.color = Color.yellow;
             }
         }
         else

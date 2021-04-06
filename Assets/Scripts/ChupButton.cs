@@ -32,6 +32,10 @@ public class ChupButton : MonoBehaviour
     {
         SceneManager.LoadScene("JackalopeLevel");
     }
+    public void BigfootLevel()
+    {
+        SceneManager.LoadScene("BigfootLevel");
+    }
     public void MapScreen()
     {
         SceneManager.LoadScene("MapScreen");
@@ -43,5 +47,9 @@ public class ChupButton : MonoBehaviour
     public void JackalopeLSillouette()
     {
         SceneManager.LoadScene("JackalopeLSilhouette");
+    }
+    public void BigfootLSillouette()
+    {
+        SceneManager.LoadScene("BigfootLSilhouette");
     }
 }
