@@ -7,10 +7,11 @@ public class JackalopeStopping : MonoBehaviour
 {
     public GameObject spawnmanager;
     public bool jackalope_caught;
+    private GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
 
@@ -31,6 +32,7 @@ public class JackalopeStopping : MonoBehaviour
     {
         if (jackalope_caught == true && collision.gameObject.CompareTag("Player"))
         {
+            manager.JackIsBeat();
             SceneManager.LoadScene("JackalopeWin");
         }
     }
