@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 1147517497}
   - component: {fileID: 1147517498}
   - component: {fileID: 1147517494}
+  - component: {fileID: 1147517499}
   m_Layer: 0
   m_Name: Test Sprites_enemy
   m_TagString: Cryptid
@@ -359,6 +360,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!95 &1147517499
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147517493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 492e9b33d86c1634d8ff435ca03cdab7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1531960112
 GameObject:
   m_ObjectHideFlags: 0

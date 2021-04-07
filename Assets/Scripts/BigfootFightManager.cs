@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigfootFightAI : MonoBehaviour
+public class BigfootFightManager : MonoBehaviour
 {
-    GameObject player;
+    private GameObject player;
 
     [SerializeField]
     private Rigidbody2D rb;
 
-    //Enum used to control finite state machine
-    private enum State { IDLE, STALKING, SLASH, CHARGE, STUCK, TRAP_CRUSH }
-    private State currentState;
 
     //Bigfoot's general stats
+    [SerializeField]
+    private float acceleration = 1f; //how fast bigfoot changes speed
+
     [SerializeField]
     private float baseSpeed = 2f; //Base speed of bigfoot. Used when he's stalking as well as the base for the other speeds.
     [SerializeField]
@@ -44,6 +44,20 @@ public class BigfootFightAI : MonoBehaviour
     private float chargeTrackingCutoff = 3f; //Cutoff distance where bigfoot stops tracking the player's current location
     private bool chargePositionSet;
 
+    //getters and setters
+    public GameObject Player { get => player; }
+    public Rigidbody2D Rb { get => rb; }
+    public float Acceleration { get => acceleration; }
+    public float BaseSpeed { get => baseSpeed; }
+    public float TopSpeed { get => topSpeed; }
+    public int SlashDamage { get => slashDamage; }
+    public int ChargeDamage { get => chargeDamage; }
+    public float ChargeWaitTime { get => chargeWaitTime; }
+    public float ChargeWaitTimeVariance { get => chargeWaitTimeVariance; }
+    public float ChargeWaitTimer { get => chargeWaitTimer; set => chargeWaitTimer = value; }
+    public float StuckTime { get => stuckTime; }
+    public float StuckTimer { get => stuckTimer; set => stuckTimer = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +65,7 @@ public class BigfootFightAI : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
-        currentState = State.IDLE;
+
 
         topSpeed = baseSpeed * topSpeedMod;
         chargeWaitTimer = chargeWaitTime + Random.Range(-chargeWaitTimeVariance, chargeWaitTimeVariance);
@@ -61,53 +75,10 @@ public class BigfootFightAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //Finite State Machine
-        if (currentState == State.IDLE)
-        {
-            Idle();
-        }
-        else if (currentState == State.STALKING)
-        {
-            Stalking();
-        }
-        else if (currentState == State.SLASH)
-        {
-            Slash();
-        }
-        else if(currentState == State.CHARGE)
-        {
-            Charge();
-        }
-        else if(currentState == State.STUCK)
-        {
-            Stuck();
-        }
-        else if(currentState == State.TRAP_CRUSH)
-        {
-            TrapCrush();
-        }
-        
-    }
-
-    void Idle()
-    {
 
     }
 
-    //Default State. Slowly lumbers toward player 
-    void Stalking()
-    {
-        //Rotate to face the player
-
-        //Move towards player at base speed
-
-        //count down chargeWaitTimer
-
-        //If player is in slashing range, change state to Slash
-
-        //If chargeWaitTimer is less than 0, reset chargePositionSet and change states to Charge
-    }
+    public
     
     //Happens when player is too close. Bigfoot slashes with the axe he stole from the player
     void Slash()
