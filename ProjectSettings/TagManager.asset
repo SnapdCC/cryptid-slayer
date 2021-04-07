@@ -21,6 +21,7 @@ TagManager:
   - trappickup
   - TumbleWeed
   - Health
+  - InvisTrap
   layers:
   - Default
   - TransparentFX

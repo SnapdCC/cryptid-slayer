@@ -42,12 +42,12 @@ public class WeaponController : MonoBehaviour
     {
         reload=Mathf.Max(0f, reload-Time.deltaTime);
         if(Time.timeScale>0){
-            if(Input.GetKeyDown(KeyCode.E)&&reload==0)
+            if(Input.GetButtonDown("Fire1")&&reload==0)
             {
                 Shoot();
                 gunsound.Play();
             }
-            if(Input.GetKeyDown(KeyCode.R)){
+            if(Input.GetButtonDown("Fire2")){
                 if(Pickup.trappickupcount == 1)
                 {
                     PlaceTrap();

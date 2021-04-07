@@ -4,36 +4,34 @@ using UnityEngine;
 
 public class ChupacabraEyes : MonoBehaviour
 {
-    public GameObject[] List;
-    Material item_material;
-    public GameObject panel;
+    GameObject[] List;
+    SpriteRenderer trap;
+    [SerializeField]
+    GameObject panel;
 
 
     // Update is called once per frame
     void Update()
     {
-        List = GameObject.FindGameObjectsWithTag("TumbleWeed");
+        List = GameObject.FindGameObjectsWithTag("InvisTrap");
 
-        if (Input.GetKey(KeyCode.Q) == true)
+        if (Input.GetButtonDown("Fire3"))
         {
             panel.SetActive(true);
                 foreach (GameObject item in List)
             {
-                item_material = item.GetComponent<Renderer>().material;
-                item_material.color = Color.yellow;
+                trap = item.GetComponent<SpriteRenderer>();
+                trap.enabled = true;
             }
         }
-        else
+        else if(Input.GetButtonUp("Fire3"))
         {
             panel.SetActive(false);
-            foreach (GameObject box in List)
+            foreach (GameObject item in List)
             {
-                item_material = box.GetComponent<Renderer>().material;
-                item_material.color = Color.white;
+                trap = item.GetComponent<SpriteRenderer>();
+                trap.enabled = false;
             }
         }
-            
-
-        
     }
 }
