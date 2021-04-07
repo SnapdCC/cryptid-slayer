@@ -15,7 +15,7 @@ public class bigfootStalking : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Rotate to face the player
-        bigfoot.transform.right = bigfoot.GetPlayer().transform.position - bigfoot.transform.position;
+        //bigfoot.transform.right = bigfoot.GetPlayer().transform.position - bigfoot.transform.position;
         //Move towards player at base speed
 
         //count down chargeWaitTimer
