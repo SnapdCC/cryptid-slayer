@@ -22,6 +22,8 @@ TagManager:
   - TumbleWeed
   - Health
   - InvisTrap
+  - Tree
+  - TreeStump
   layers:
   - Default
   - TransparentFX
