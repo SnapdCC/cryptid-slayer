@@ -7,11 +7,13 @@ using UnityEngine.UI;
 
 public class ChupButton : MonoBehaviour
 {
+    GameManager GameManager;
     public GameObject Continue_Button;
     private float _sec;
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Continue_Button.SetActive(false);
         StartCoroutine(ActivationRoutine());
     }
@@ -36,8 +38,19 @@ public class ChupButton : MonoBehaviour
     {
         SceneManager.LoadScene("BigfootLevel");
     }
-    public void MapScreen()
+    public void JackToMapScreen()
     {
+        GameManager.BeatJack();
+        SceneManager.LoadScene("MapScreen");
+    }
+    public void ChupToMapScreen()
+    {
+        GameManager.BeatChup();
+        SceneManager.LoadScene("MapScreen");
+    }
+    public void SquatchToMapScreen()
+    {
+        GameManager.BeatSquatch();
         SceneManager.LoadScene("MapScreen");
     }
     public void ChupacabraLSillouette()
