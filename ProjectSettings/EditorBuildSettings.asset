@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BigfootVictoryScreen.unity
     guid: 71522e719f47aad43b47c3de28ddff92
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: cfc18a980a42be948961944db63b281a
   m_configObjects: {}
