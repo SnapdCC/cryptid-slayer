@@ -14,11 +14,23 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public bool sprinting = false;
 
+    bool canSprint;
+    bool canSee;
+
+    GameObject[] List;
+    SpriteRenderer trap;
+    [SerializeField]
+    GameObject panel;
+
     Vector2 movement;
     Vector2 mousepos;
+    GameManager GameManager;
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        canSprint = GameManager.JackIsBeat();
+        canSee = GameManager.ChupIsBeat();
         animator.SetBool("WalkingF", false);
         animator.SetBool("WalkingB", false);
     }
@@ -61,13 +73,35 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("WalkingF", false);
         }
         mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        List = GameObject.FindGameObjectsWithTag("InvisTrap");
+
+        if (Input.GetButtonDown("Fire3")&&canSee)
+        {
+            panel.SetActive(true);
+                foreach (GameObject item in List)
+            {
+                trap = item.GetComponent<SpriteRenderer>();
+                trap.enabled = true;
+            }
+        }
+        else if(Input.GetButtonUp("Fire3")&&canSee)
+        {
+            panel.SetActive(false);
+            foreach (GameObject item in List)
+            {
+                trap = item.GetComponent<SpriteRenderer>();
+                trap.enabled = false;
+            }
+        }
     }
 
     void FixedUpdate()
     {
         if(!sprinting){
             rbMove.MovePosition(rbMove.position + movement * moveSpeed * Time.fixedDeltaTime);
-        }else{
+        }else if(sprinting&&canSprint){
             rbMove.MovePosition(rbMove.position + movement * (moveSpeed * sprintMod) * Time.fixedDeltaTime);
         }
     }

@@ -144,6 +144,7 @@ MonoBehaviour:
   trapPrefab: {fileID: 97242724439222003, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
   gunsound: {fileID: 0}
   bulletForce: 20
+  reloadTime: 0.25
 --- !u!1 &4795992895377631533
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,8 +243,6 @@ GameObject:
   - component: {fileID: 4795992895566036744}
   - component: {fileID: 4795992895566036791}
   - component: {fileID: 4795992895566036790}
-  - component: {fileID: 4795992895566036789}
-  - component: {fileID: 8976265535455732117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -360,6 +359,7 @@ MonoBehaviour:
   animator: {fileID: 4795992895566036745}
   cam: {fileID: 0}
   sprinting: 0
+  panel: {fileID: 0}
 --- !u!95 &4795992895566036745
 Animator:
   serializedVersion: 3
@@ -446,38 +446,6 @@ MonoBehaviour:
   HeartMore: {fileID: 0}
   HeartHalf: {fileID: 0}
   HeartLess: {fileID: 0}
---- !u!114 &4795992895566036789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795992895566036788}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cab32ee6c6fd3a42888a1d7cba66c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  firePointOuter: {fileID: 0}
-  bulletPrefab: {fileID: 0}
-  trapPrefab: {fileID: 0}
-  gunsound: {fileID: 0}
-  bulletForce: 20
---- !u!114 &8976265535455732117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795992895566036788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b9450cab2be854d8e57c4d020b480a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  List: []
-  panel: {fileID: 0}
 --- !u!1001 &2780712100470882287
 PrefabInstance:
   m_ObjectHideFlags: 0
