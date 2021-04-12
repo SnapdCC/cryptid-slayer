@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if(GameManager.ChupIsBeat()&&GameManager.JackIsBeat()&&GameManager.SquatchIsBeat()){
+            SceneManager.LoadScene("EndScreen");
+        }
         // Debug.Log(GameManager.gameObject.scene);
         ChupBeaten.SetActive(GameManager.ChupIsBeat());
         JackBeaten.SetActive(GameManager.JackIsBeat());

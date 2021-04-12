@@ -65,4 +65,7 @@ public class ChupButton : MonoBehaviour
     {
         SceneManager.LoadScene("BigfootLSilhouette");
     }
+    public void QuitGame(){
+        Application.Quit();
+    }
 }
