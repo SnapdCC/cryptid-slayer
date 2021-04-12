@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: OuterwallV2-01 (1) 1_0
+  m_Name: OuterwallV2-01 (2)_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -4219001673832347529, guid: e3265fb0a96e0e5408f36c02ecdda13b, type: 3}
+  m_Sprite: {fileID: -2515183071850224221, guid: 14fd0fef73cf2cc44a4c527a8ab8ffa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

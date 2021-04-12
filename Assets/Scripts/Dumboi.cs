@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fuckyou : MonoBehaviour
+public class Dumboi : MonoBehaviour
 {
     public GameObject player;
 
