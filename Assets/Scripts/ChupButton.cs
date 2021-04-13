@@ -40,17 +40,17 @@ public class ChupButton : MonoBehaviour
     }
     public void JackToMapScreen()
     {
-        GameManager.BeatJack();
+        GameManager.JackLevelBeaten = true;
         SceneManager.LoadScene("MapScreen");
     }
     public void ChupToMapScreen()
     {
-        GameManager.BeatChup();
+        GameManager.ChupaLevelBeaten = true;
         SceneManager.LoadScene("MapScreen");
     }
     public void SquatchToMapScreen()
     {
-        GameManager.BeatSquatch();
+        GameManager.SquatchLevelBeaten = true;
         SceneManager.LoadScene("MapScreen");
     }
     public void ChupacabraLSillouette()

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    bool ChupaLevelBeaten;
-    bool JackLevelBeaten;
-    bool SquatchLevelBeaten;
+    public bool ChupaLevelBeaten;
+    public bool JackLevelBeaten;
+    public bool SquatchLevelBeaten;
     // Start is called before the first frame update
     void Start()
     {
