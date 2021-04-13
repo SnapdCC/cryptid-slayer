@@ -6,6 +6,8 @@ public class BigfootFightManager : MonoBehaviour
 {
     private GameObject player;
 
+    private GameObject staticPoint;
+
     [SerializeField]
     private Rigidbody2D rb;
 
@@ -19,6 +21,7 @@ public class BigfootFightManager : MonoBehaviour
     [SerializeField]
     private float topSpeedMod = 3f; //Modifier used with baseSpeed to determine topSpeed
     private float topSpeed; //Top speed of bigfoot
+    private float currentSpeed = 0f;//Keeps track of bigfoot's current speed
     [SerializeField]
     private int slashDamage = 2; //Damage done on a slash hit
     [SerializeField]
@@ -33,6 +36,9 @@ public class BigfootFightManager : MonoBehaviour
     private float chargeWaitTimer; //Timer used to keep track of the time between charges
 
     [SerializeField]
+    private float chargeCooldownTime = 2f;
+
+    [SerializeField]
     private float stuckTime = 5f; //Time bigfoot is stuck in a pitfall
     private float stuckTimer; //Keeps track of stuck time
 
@@ -42,7 +48,6 @@ public class BigfootFightManager : MonoBehaviour
     //Charge variables
     [SerializeField]
     private float chargeTrackingCutoff = 3f; //Cutoff distance where bigfoot stops tracking the player's current location
-    private bool chargePositionSet;
 
     //getters and setters
     public GameObject Player { get => player; }
@@ -57,6 +62,10 @@ public class BigfootFightManager : MonoBehaviour
     public float ChargeWaitTimer { get => chargeWaitTimer; set => chargeWaitTimer = value; }
     public float StuckTime { get => stuckTime; }
     public float StuckTimer { get => stuckTimer; set => stuckTimer = value; }
+    public float CurrentSpeed { get => currentSpeed; set => currentSpeed = value; }
+    public GameObject StaticPoint { get => staticPoint; }
+    public float ChargeTrackingCutoff { get => chargeTrackingCutoff; }
+    public float ChargeCooldownTime { get => chargeCooldownTime; }
 
     // Start is called before the first frame update
     void Start()
@@ -65,11 +74,10 @@ public class BigfootFightManager : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
-
+        staticPoint = GameObject.FindWithTag("StaticPoint");
 
         topSpeed = baseSpeed * topSpeedMod;
         chargeWaitTimer = chargeWaitTime + Random.Range(-chargeWaitTimeVariance, chargeWaitTimeVariance);
-        chargePositionSet = false;
     }
 
     // Update is called once per frame
@@ -78,7 +86,26 @@ public class BigfootFightManager : MonoBehaviour
 
     }
 
-    public
+    //Use to change the bigfoot speed by the bigfoot's acceleration
+    public void InterpolateSpeed(float endSpeed)
+    {
+        float pastSpeed = currentSpeed;
+
+        //Interpolate towards the endSpeed by the rate of acceleration
+        if (currentSpeed > endSpeed)
+        {
+            currentSpeed -= acceleration * Time.deltaTime;
+        }
+        else if (currentSpeed < endSpeed)
+        {
+            currentSpeed += acceleration * Time.deltaTime;
+        }
+
+        if(currentSpeed < pastSpeed && currentSpeed < endSpeed || currentSpeed > pastSpeed && currentSpeed > endSpeed)//If the change overshot, set currentSpeed to the endSpeed
+        {
+            currentSpeed = endSpeed;
+        }
+    }
     
     //Happens when player is too close. Bigfoot slashes with the axe he stole from the player
     void Slash()
@@ -88,15 +115,6 @@ public class BigfootFightManager : MonoBehaviour
         //Afterwards, change state to Stalking
     }
 
-    //Happens after enough time away from player. Bigfoot picks up speed and charges at the player
-    void Charge()
-    {
-        //If chargePositionSet is false, continue to target player while interpolating to top speed
-
-        //otherwise, wait until bigfoot passes the staticPoint, then interpolate speed down to zero
-
-        //Afterwards, start tracking player while interpolating up to base speed. Once base speed is met, reset chargeWaitTimer and set state to Stalking
-    }
 
     //Happens when bigfoot collides with a pitfall
     void Stuck()
