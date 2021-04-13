@@ -25,10 +25,11 @@ public class ActivateTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        particlesystem.SetActive(true);
         foreach (GameObject go in gameObjectArray)
         {
             go.SetActive(true);
-            //particlesystem.SetActive(true);
+            
         }
         if (collision.gameObject.CompareTag("Player"))
         {

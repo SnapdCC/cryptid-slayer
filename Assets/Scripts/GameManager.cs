@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChupaLevelBeaten = true;
-        JackLevelBeaten = true;
-        SquatchLevelBeaten = true;
+        ChupaLevelBeaten = false;
+        JackLevelBeaten = false;
+        SquatchLevelBeaten = false;
         DontDestroyOnLoad(gameObject);
     }
 

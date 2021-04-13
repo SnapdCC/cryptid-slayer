@@ -12,12 +12,14 @@ public class Trap : MonoBehaviour
     private Sprite trapClose; 
     private bool isShut;
     public float catchTime = 5.0f;
-    public GameObject spawnmanager; 
+    public GameObject spawnmanager;
+    public static bool invistrapactive = false;
     // Start is called before the first frame update
     void Start()
     {
         trapSprite = GetComponent<SpriteRenderer>();
         isShut = false;
+        
     }
 
     public void Shut(){
@@ -32,11 +34,17 @@ public class Trap : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T) == true){
             Shut();
-        }   
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (this.gameObject.tag == "InvisTrap" && collision.gameObject.tag.Equals("Player"))
+        {
+            Shut();
+            PlayerDeath.damagecount++;
+        }
         if (collision.gameObject.tag.Equals("Jackalope"))
         {
             Debug.Log("it worked!");

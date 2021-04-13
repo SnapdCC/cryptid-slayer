@@ -58405,7 +58405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1368646714}
-  stand: {fileID: 0}
   sinkhole: {fileID: 224280506}
 --- !u!61 &224280505
 BoxCollider2D:
@@ -69691,7 +69690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1368646714}
-  stand: {fileID: 0}
   sinkhole: {fileID: 588117927}
 --- !u!61 &588117926
 BoxCollider2D:
@@ -70339,7 +70337,7 @@ GameObject:
   - component: {fileID: 634912336}
   m_Layer: 0
   m_Name: SinkHole (4)
-  m_TagString: Untagged
+  m_TagString: ChupReturn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70353,12 +70351,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 634912335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699261e59e64d8c4592307f79b21b549, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cec703a20b87094baa327701a5944d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1368646714}
-  stand: {fileID: 0}
-  sinkhole: {fileID: 634912338}
+  badtile: {fileID: 0}
 --- !u!61 &634912337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78951,7 +78948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b9450cab2be854d8e57c4d020b480a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  List: []
   panel: {fileID: 40412564}
 --- !u!212 &1368646721 stripped
 SpriteRenderer:
@@ -82034,7 +82030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1368646714}
-  stand: {fileID: 0}
   sinkhole: {fileID: 1638086192}
 --- !u!61 &1638086191
 BoxCollider2D:
@@ -87559,6 +87554,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394984286580962561, guid: c973030e1f9134b44911ff47b6c26c2c, type: 3}
+      propertyPath: Chupacabra
+      value: 
+      objectReference: {fileID: 1720557168}
     - target: {fileID: 2480062085281963423, guid: c973030e1f9134b44911ff47b6c26c2c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -46.488037

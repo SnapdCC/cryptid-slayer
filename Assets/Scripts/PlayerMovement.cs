@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool canSprint;
     bool canSee;
 
-    GameObject[] List;
+    public GameObject[] List;
     SpriteRenderer trap;
     [SerializeField]
     GameObject panel;
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
         List = GameObject.FindGameObjectsWithTag("InvisTrap");
 
-        if (Input.GetButtonDown("Fire3")&&canSee)
+        if (Input.GetButtonDown("Fire3"))
         {
             panel.SetActive(true);
                 foreach (GameObject item in List)
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
                 trap.enabled = true;
             }
         }
-        else if(Input.GetButtonUp("Fire3")&&canSee)
+        else if(Input.GetButtonUp("Fire3"))
         {
             panel.SetActive(false);
             foreach (GameObject item in List)

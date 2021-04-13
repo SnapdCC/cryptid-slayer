@@ -24,6 +24,7 @@ TagManager:
   - InvisTrap
   - Tree
   - TreeStump
+  - ChupReturn
   layers:
   - Default
   - TransparentFX
