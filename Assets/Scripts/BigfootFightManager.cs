@@ -11,6 +11,10 @@ public class BigfootFightManager : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
 
+    //enum used to keep track of the current state
+    public enum BigfootState { Idle, Stalking, Charging, Slashing, Stuck };
+    private BigfootState currentState;
+
 
     //Bigfoot's general stats
     [SerializeField]
@@ -49,6 +53,8 @@ public class BigfootFightManager : MonoBehaviour
     [SerializeField]
     private float chargeTrackingCutoff = 3f; //Cutoff distance where bigfoot stops tracking the player's current location
 
+    private bool chargePositionPassed; //keeps track of whether bigfoot's passed the staticPoint during a charge
+
     //getters and setters
     public GameObject Player { get => player; }
     public Rigidbody2D Rb { get => rb; }
@@ -66,11 +72,15 @@ public class BigfootFightManager : MonoBehaviour
     public GameObject StaticPoint { get => staticPoint; }
     public float ChargeTrackingCutoff { get => chargeTrackingCutoff; }
     public float ChargeCooldownTime { get => chargeCooldownTime; }
+    public BigfootState CurrentState { get => currentState; set => currentState = value; }
+    public bool ChargePositionPassed { get => chargePositionPassed; set => chargePositionPassed = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         rb.freezeRotation = true;
+
+        currentState = BigfootState.Idle;
 
         player = GameObject.FindWithTag("Player");
 
@@ -83,6 +93,7 @@ public class BigfootFightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.velocity = new Vector2(0.0f, 0.0f); //Constantly removes any velocity to combat the physics system. Remove if converting to using physics instead of translation
 
     }
 
@@ -132,8 +143,15 @@ public class BigfootFightManager : MonoBehaviour
         //Afterwards, set state to Stalking
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D trigger)
     {
-
+        if(currentState == BigfootState.Charging)
+        {
+            if(trigger.gameObject.tag == "StaticPoint")
+            {
+                chargePositionPassed = true;
+            }
+        }
+        
     }
 }

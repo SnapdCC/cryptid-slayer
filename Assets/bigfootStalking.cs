@@ -12,6 +12,8 @@ public class bigfootStalking : StateMachineBehaviour
         bigfoot = GameObject.FindWithTag("Cryptid");
         manager = bigfoot.GetComponent<BigfootFightManager>();
 
+        manager.CurrentState = BigfootFightManager.BigfootState.Stalking;
+
         //modify hitbox behavior here
     }
 
