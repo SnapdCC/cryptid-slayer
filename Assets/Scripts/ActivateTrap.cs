@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateTrap : MonoBehaviour
 {
     public GameObject particlesystem;
-    GameObject[] gameObjectArray, TreeArray, TreeStumpArray;
+    public GameObject[] gameObjectArray, TreeArray, TreeStumpArray;
 
 
     // Start is called before the first frame update
@@ -31,8 +31,6 @@ public class ActivateTrap : MonoBehaviour
             go.SetActive(true);
             
         }
-        if (collision.gameObject.CompareTag("Player"))
-        {
             foreach (GameObject tree in TreeArray)
             {
                 tree.SetActive(false);
@@ -42,7 +40,6 @@ public class ActivateTrap : MonoBehaviour
                 treestump.SetActive(true);
             }
             StartCoroutine(waitCoroutine());
-        }
 
     }
 
