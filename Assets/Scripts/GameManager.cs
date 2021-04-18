@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool ChupaLevelBeaten;
+    public static bool ChupaLevelBeaten;
     public bool JackLevelBeaten;
     public bool SquatchLevelBeaten;
     // Start is called before the first frame update

@@ -6,7 +6,8 @@ public class ActivateTrap : MonoBehaviour
 {
     public GameObject particlesystem;
     public GameObject[] gameObjectArray, TreeArray, TreeStumpArray;
-
+    public Renderer rend;
+    public Collider2D collide;
 
     // Start is called before the first frame update
     void Start()
@@ -15,22 +16,28 @@ public class ActivateTrap : MonoBehaviour
         TreeArray = GameObject.FindGameObjectsWithTag("Tree");
         TreeStumpArray = GameObject.FindGameObjectsWithTag("TreeStump");
 
-        foreach (GameObject go in gameObjectArray)
+        /*foreach (GameObject go in gameObjectArray)
         {
-            go.SetActive(false);
-        }
+            rend = go.GetComponent<Renderer>();
+            rend.enabled = false;
+            collide = go.GetComponent<Collider2D>();
+            collide.enabled = false;
+
+        }*/
         
 
     }
 
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        particlesystem.SetActive(true);
-        foreach (GameObject go in gameObjectArray)
+        /*if (GameManager.ChupaLevelBeaten != true)
         {
-            go.SetActive(true);
-            
-        }
+            particlesystem.SetActive(true);
+        }*/
+
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
             foreach (GameObject tree in TreeArray)
             {
                 tree.SetActive(false);
@@ -39,16 +46,13 @@ public class ActivateTrap : MonoBehaviour
             {
                 treestump.SetActive(true);
             }
-            StartCoroutine(waitCoroutine());
+
+        }
+        
+     
 
     }
 
-    IEnumerator waitCoroutine()
-    {
-        yield return new WaitForSeconds(1);
-        //Debug.Log("I waited!");
-        PlayerDeath.damagecount += 1;
-        //yield return null;
-    }
+  
 
 }
