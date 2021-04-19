@@ -7310,6 +7310,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97242724439222000, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 97242724439222001, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
       propertyPath: spawnmanager
       value: 

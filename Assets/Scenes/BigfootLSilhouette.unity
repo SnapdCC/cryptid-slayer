@@ -597,7 +597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Big Foot
+  m_Text: BigFoot
 --- !u!222 &8005132802045680809
 CanvasRenderer:
   m_ObjectHideFlags: 0
