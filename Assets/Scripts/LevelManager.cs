@@ -20,14 +20,16 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("EndScreen");
         }
         // Debug.Log(GameManager.gameObject.scene);
-        ChupBeaten.SetActive(GameManager.ChupIsBeat());
-        JackBeaten.SetActive(GameManager.JackIsBeat());
-        SquatchBeaten.SetActive(GameManager.SquatchIsBeat());
+        ChupBeaten.SetActive(GameManager.ChupaLevelBeaten);
+        JackBeaten.SetActive(GameManager.JackLevelBeaten);
+        SquatchBeaten.SetActive(GameManager.SquatchLevelBeaten);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ChupBeaten.SetActive(GameManager.ChupaLevelBeaten);
+        JackBeaten.SetActive(GameManager.JackLevelBeaten);
+        SquatchBeaten.SetActive(GameManager.SquatchLevelBeaten);
     }
 }
