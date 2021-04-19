@@ -32,7 +32,7 @@ public class JackalopeStopping : MonoBehaviour
     {
         if (jackalope_caught == true && collision.gameObject.CompareTag("Player"))
         {
-            manager.JackIsBeat();
+            manager.JackLevelBeaten = true;
             SceneManager.LoadScene("JackalopeWin");
         }
     }
