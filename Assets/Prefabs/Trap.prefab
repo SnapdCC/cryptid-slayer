@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8846787432994868168, guid: c21fc2612068ad642a4dfa81f089d093, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapOpen: {fileID: 8846787432994868168, guid: c21fc2612068ad642a4dfa81f089d093, type: 3}
   trapClose: {fileID: 7860919206490161737, guid: c21fc2612068ad642a4dfa81f089d093, type: 3}
+  catchTime: 5
+  spawnmanager: {fileID: 0}
 --- !u!58 &97242724439222002
 CircleCollider2D:
   m_ObjectHideFlags: 0
