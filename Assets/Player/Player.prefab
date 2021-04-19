@@ -144,7 +144,7 @@ MonoBehaviour:
   trapPrefab: {fileID: 97242724439222003, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
   gunsound: {fileID: 0}
   bulletForce: 20
-  reloadTime: 0.25
+  reloadTime: 0.5
 --- !u!1 &4795992895377631533
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +359,7 @@ MonoBehaviour:
   animator: {fileID: 4795992895566036745}
   cam: {fileID: 0}
   sprinting: 0
+  List: []
   panel: {fileID: 0}
 --- !u!95 &4795992895566036745
 Animator:
