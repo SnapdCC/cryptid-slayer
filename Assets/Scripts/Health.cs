@@ -29,18 +29,17 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             SceneManager.LoadScene(WinScreen);
-            manager.BeatChup();
-            
-            //wintext.SetActive(true);
-
         }
     }
+
     public float GetHealth(){
         return health;
     }
+
     public float GetMax(){
         return MaxHealth;
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("bullet"))
