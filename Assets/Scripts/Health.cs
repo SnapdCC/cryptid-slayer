@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     public GameObject wintext;
     private GameManager manager;
     
+    [SerializeField]
+    private string WinScreen;
     float health;
     [SerializeField]
     public float MaxHealth = 1f;
@@ -26,7 +28,7 @@ public class Health : MonoBehaviour
         if (health == 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("WinScreen");
+            SceneManager.LoadScene(WinScreen);
             manager.BeatChup();
             
             //wintext.SetActive(true);
