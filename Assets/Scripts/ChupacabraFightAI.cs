@@ -186,6 +186,9 @@ public class ChupacabraFightAI : MonoBehaviour
         //Phase 2:Setup
         else if (pouncePhase == 2)
         {
+            //change animator's pounce bool to true to help animations line up properly
+            anim.SetBool("pouncing", true);
+
             //reset passedPoint
             passedPoint = false;
 
@@ -202,7 +205,7 @@ public class ChupacabraFightAI : MonoBehaviour
             else
                 betweenPounceTimer = timeBetweenPounces * 2;
 
-            Debug.Log("Pounce Counter: " + pounceCounter);
+            //Debug.Log("Pounce Counter: " + pounceCounter);
 
             //switch to phase 3
             pouncePhase = 3;
@@ -246,7 +249,12 @@ public class ChupacabraFightAI : MonoBehaviour
         //Phase 4:Resolution
         else if (pouncePhase == 4)
         {
+            //stop making pounce noises
             pouncesound.Stop();
+
+            //Make sure the animator starts drawing the chupa's animations for strafing properly
+            anim.SetBool("pouncing", false);
+
             //Reset the pounce counter
             pounceCounter = 0;
 

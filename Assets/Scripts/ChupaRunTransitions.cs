@@ -17,31 +17,61 @@ public class ChupaRunTransitions : StateMachineBehaviour
     {
         float rotation = animator.GetFloat("rotation");
 
-        //Play the right animation based on the chupa's rotation as well as whether it's currently running clockwise
-        
-        //running down
-        if((rotation > 315f || rotation > 0f && rotation < 45f) && !animator.GetBool("runningClockwise") || (rotation > 135f && rotation < 225f) && animator.GetBool("runningClockwise"))
+        //if the chupa is strafing, play the right animation based on the chupa's rotation as well as whether it's currently running clockwise
+        if (!animator.GetBool("pouncing"))
         {
-            chupaSprite.flipX = false;
-            animator.Play("Base Layer.ChupaRunDown");
+            //running down
+            if ((rotation > 315f || rotation > 0f && rotation < 45f) && !animator.GetBool("runningClockwise") || (rotation > 135f && rotation < 225f) && animator.GetBool("runningClockwise"))
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaRunDown");
+            }
+            //running up
+            else if ((rotation > 315f || rotation > 0f && rotation < 45f) && animator.GetBool("runningClockwise") || (rotation > 135f && rotation < 225f) && !animator.GetBool("runningClockwise"))
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaRunUp");
+            }
+            //running right
+            else if ((rotation > 45f && rotation < 135f) && !animator.GetBool("runningClockwise") || (rotation > 225f && rotation < 315f) && animator.GetBool("runningClockwise"))
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaLeftRightRun");
+            }
+            //running left
+            else if ((rotation > 45f && rotation < 135f) && animator.GetBool("runningClockwise") || (rotation > 225f && rotation < 315f) && !animator.GetBool("runningClockwise"))
+            {
+                chupaSprite.flipX = true;
+                animator.Play("Base Layer.ChupaLeftRightRun");
+            }
         }
-        //running up
-        else if ((rotation > 315f || rotation > 0f && rotation < 45f) && animator.GetBool("runningClockwise") || (rotation > 135f && rotation < 225f) && !animator.GetBool("runningClockwise"))
+        //If chupa is pouncing, switch how the animations are called so it fits the chupa's movement
+        else
         {
-            chupaSprite.flipX = false;
-            animator.Play("Base Layer.ChupaRunUp");
-        }
-        //running right
-        else if((rotation > 45f && rotation < 135f) && !animator.GetBool("runningClockwise") || (rotation > 225f && rotation < 315f) && animator.GetBool("runningClockwise"))
-        {
-            chupaSprite.flipX = false;
-            animator.Play("Base Layer.ChupaLeftRightRun");
-        }
-        //running left
-        else if ((rotation > 45f && rotation < 135f) && animator.GetBool("runningClockwise") || (rotation > 225f && rotation < 315f) && !animator.GetBool("runningClockwise"))
-        {
-            chupaSprite.flipX = true;
-            animator.Play("Base Layer.ChupaLeftRightRun");
+            //pouncing right
+            if(rotation > 315f || rotation > 0f && rotation < 45f)
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaLeftRightRun");
+            }
+            //pouncing up
+            else if(rotation > 45f && rotation < 135f)
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaRunUp");
+            }
+            //pouncing left
+            else if(rotation > 135f && rotation < 225f)
+            {
+                chupaSprite.flipX = true;
+                animator.Play("Base Layer.ChupaLeftRightRun");
+            }
+            //pouncing down
+            else if(rotation > 225f && rotation < 315f)
+            {
+                chupaSprite.flipX = false;
+                animator.Play("Base Layer.ChupaRunDown");
+            }
         }
 
 
