@@ -18,6 +18,7 @@ public class Pickup : MonoBehaviour
     public GameObject cam1, cam2;
     public GameObject chestclose, chestopen;
     public GameObject Jackalope;
+    public GameObject Traptext;
     GameObject[] gameObjects;
     public GameObject spawnmanager;
     // Start is called before the first frame update
@@ -99,6 +100,8 @@ public class Pickup : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             trappickupcount++;
+            Traptext.SetActive(true);
+            
         }
         if (collision.gameObject.CompareTag("ExplosionTrigger"))
         {
