@@ -9,7 +9,7 @@ public class ChupButton : MonoBehaviour
 {
     GameManager GameManager;
     public GameObject Continue_Button;
-    private float _sec;
+    private float _sec=1f;
 
     void Start()
     {
@@ -51,6 +51,10 @@ public class ChupButton : MonoBehaviour
     public void SquatchToMapScreen()
     {
         GameManager.SquatchLevelBeaten = true;
+        SceneManager.LoadScene("MapScreen");
+    }
+    public void GenericToMapScreen()
+    {
         SceneManager.LoadScene("MapScreen");
     }
     public void ChupacabraLSillouette()
