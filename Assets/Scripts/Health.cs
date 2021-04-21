@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public GameObject bullet;
-    public GameObject wintext;
-    private GameManager manager;
     
     [SerializeField]
     private string WinScreen;
@@ -18,7 +16,6 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         health = MaxHealth;
     }
 
