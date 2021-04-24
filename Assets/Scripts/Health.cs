@@ -36,14 +36,10 @@ public class Health : MonoBehaviour
     public float GetMax(){
         return MaxHealth;
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public void TakeDamage()
     {
-        if (collision.gameObject.tag.Equals("bullet"))
-        {
-            //Destroy(collision.gameObject);
-            
-            health = health - .125f;
-        }
+        health = health - .125f;
     }
+    
 }

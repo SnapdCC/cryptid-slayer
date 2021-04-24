@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BigfootFightManager : MonoBehaviour
 {
+    private Health bigfootHealth;
+
     private GameObject player;
+    private PlayerDeath playerHealth;
 
     private GameObject staticPoint;
 
@@ -74,6 +77,8 @@ public class BigfootFightManager : MonoBehaviour
     public float ChargeCooldownTime { get => chargeCooldownTime; }
     public BigfootState CurrentState { get => currentState; set => currentState = value; }
     public bool ChargePositionPassed { get => chargePositionPassed; set => chargePositionPassed = value; }
+    public PlayerDeath PlayerHealth { get => playerHealth; }
+    public Health BigfootHealth { get => bigfootHealth; }
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +87,10 @@ public class BigfootFightManager : MonoBehaviour
 
         currentState = BigfootState.Idle;
 
+        bigfootHealth = gameObject.GetComponent<Health>();
+
         player = GameObject.FindWithTag("Player");
+        playerHealth = player.GetComponent<PlayerDeath>();
 
         staticPoint = GameObject.FindWithTag("StaticPoint");
 
@@ -141,6 +149,17 @@ public class BigfootFightManager : MonoBehaviour
         //Delete trap, play trap crush animation while keeping bigfoot in place
 
         //Afterwards, set state to Stalking
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(currentState == BigfootState.Charging)
+        {
+            if(collision.gameObject.tag == "Player")
+            {
+                playerHealth.TakeDamage();
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D trigger)

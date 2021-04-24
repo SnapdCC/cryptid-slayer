@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChupacabraFightAI : MonoBehaviour
 {
     GameObject player;
+    private PlayerDeath playerHealth;
     private float idle; //Trigger for idle state
     public float trappedTime = 5f;
     public AudioSource pouncesound;
@@ -19,6 +20,8 @@ public class ChupacabraFightAI : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer rend;
+
+    private Health health;
 
     public float baseSpeed = 5f; //Base speed of the Cabra
     public float pounceSpeedMod = 1.8f; //Modifier to base speed during pounce cycle. 1 is no change. Should be greater than 1
@@ -51,6 +54,9 @@ public class ChupacabraFightAI : MonoBehaviour
 
         idle = 0f;
         player = GameObject.FindWithTag("Player");
+        playerHealth = player.GetComponent<PlayerDeath>();
+
+        health = gameObject.GetComponent<Health>();
 
         strafeChangeTimer = strafeChangeTime + Random.Range(-strafeChangeTimeVariance, strafeChangeTimeVariance);
         pounceTimer = pounceTime + Random.Range(-pounceTimeVariance, pounceTimeVariance);
@@ -268,6 +274,19 @@ public class ChupacabraFightAI : MonoBehaviour
             pounceTimer = pounceTime + Random.Range(-pounceTimeVariance, pounceTimeVariance);
         }
 
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("bullet"))//Take damage if shot
+        {
+            health.TakeDamage();
+        }
+        if(collision.gameObject == player)//If run into player, deal damage to player
+        {
+            playerHealth.TakeDamage();
+        }
 
     }
 

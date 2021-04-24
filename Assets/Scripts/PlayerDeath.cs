@@ -49,15 +49,10 @@ public class PlayerDeath : MonoBehaviour
     }
 
 
-        private void OnCollisionEnter2D(Collision2D collision) // Detects collisions between player and cryptid
+    private void OnCollisionEnter2D(Collision2D collision) // Detects collisions between player and cryptid
     {
         GameObject body = collision.gameObject;
         Debug.Log(body.tag);
-        if (body.tag.Equals("Cryptid"))
-        {
-            damagecount++;
-            //health = health - .25f;
-        }
         if (body.tag.Equals("Health"))
         {
             
@@ -66,8 +61,13 @@ public class PlayerDeath : MonoBehaviour
         }
         
     }
+
+    public void TakeDamage()
+    {
+        damagecount++;
+    }
     
-        void HeartManagement() // For each damage count the correct heart images are displayed based on the count
+    void HeartManagement() // For each damage count the correct heart images are displayed based on the count
     {
         if(damagecount == 0) {
             Heart1.sprite = HeartFull;
