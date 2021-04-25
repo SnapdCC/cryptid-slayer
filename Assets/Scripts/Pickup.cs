@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
-    int count;
     int stop = 0;
     int hintcount;
-    public static int tntcount, trappickupcount;
+    public static int count, tntcount, trappickupcount;
     public GameObject Explosion;
     public GameObject script;
     public GameObject clue1, clue2, clue3, clue4;

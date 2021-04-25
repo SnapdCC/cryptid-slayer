@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateTrap : MonoBehaviour
 {
     public GameObject particlesystem;
-    public GameObject[] gameObjectArray, TreeArray, TreeStumpArray;
+    public GameObject[] gameObjectArray, TreeArray, TreeStumpArray, BlockadeArray;
     public Renderer rend;
     public Collider2D collide;
 
@@ -15,6 +15,7 @@ public class ActivateTrap : MonoBehaviour
         gameObjectArray = GameObject.FindGameObjectsWithTag("Box");
         TreeArray = GameObject.FindGameObjectsWithTag("Tree");
         TreeStumpArray = GameObject.FindGameObjectsWithTag("TreeStump");
+        BlockadeArray = GameObject.FindGameObjectsWithTag("Blockade");
 
         /*foreach (GameObject go in gameObjectArray)
         {
@@ -24,8 +25,19 @@ public class ActivateTrap : MonoBehaviour
             collide.enabled = false;
 
         }*/
-        
 
+
+    }
+
+    void Update()
+    {
+        if (Pickup.count == 4)
+        {
+            foreach (GameObject blockade in BlockadeArray)
+            {
+                blockade.SetActive(false);
+            }
+        }
     }
 
 
