@@ -5,7 +5,7 @@ using UnityEngine;
 public class BigfootFightActivator : MonoBehaviour
 {
     [SerializeField]
-    private GameObject bigfoot;
+    public GameObject bigfoot, healthBar;
 
     private Animator bigfootAnimator;
 
@@ -27,6 +27,7 @@ public class BigfootFightActivator : MonoBehaviour
         if(trigger.gameObject.tag == "Player")
         {
             bigfootAnimator.SetBool("Idle", false);
+            healthBar.SetActive(true);
         }
     }
 }
