@@ -5,6 +5,8 @@ using UnityEngine;
 public class BigfootFightManager : MonoBehaviour
 {
     private Health bigfootHealth;
+    [SerializeField]
+    private Animator anim;
 
     private GameObject player;
     private PlayerDeath playerHealth;
@@ -49,8 +51,10 @@ public class BigfootFightManager : MonoBehaviour
     private float stuckTime = 5f; //Time bigfoot is stuck in a pitfall
     private float stuckTimer; //Keeps track of stuck time
 
-    //NOTE:Since I think Slash and Trap Crush are states that last as long as their animation, I am not adding any times into the code
-    //NOTE TO SELF: Ask Professor how to base timings on animations
+
+    //Slash variables
+    [SerializeField]
+    private float slashDistance = 2f;
 
     //Charge variables
     [SerializeField]
@@ -79,6 +83,7 @@ public class BigfootFightManager : MonoBehaviour
     public bool ChargePositionPassed { get => chargePositionPassed; set => chargePositionPassed = value; }
     public PlayerDeath PlayerHealth { get => playerHealth; }
     public Health BigfootHealth { get => bigfootHealth; }
+    public float SlashDistance { get => slashDistance; }
 
     // Start is called before the first frame update
     void Start()
@@ -126,31 +131,6 @@ public class BigfootFightManager : MonoBehaviour
         }
     }
     
-    //Happens when player is too close. Bigfoot slashes with the axe he stole from the player
-    void Slash()
-    {
-        //Play Slash animation and activate slash hitbox
-
-        //Afterwards, change state to Stalking
-    }
-
-
-    //Happens when bigfoot collides with a pitfall
-    void Stuck()
-    {
-        //Lock bigfoot in place for the duration of stuckTimer. Make it so all hitboxes take damage, not just the rear
-
-        //Afterwards, disable pitfall and set state to Stalking
-    }
-
-    //Happens when bigfoot collides with a bear trap
-    void TrapCrush()
-    {
-        //Delete trap, play trap crush animation while keeping bigfoot in place
-
-        //Afterwards, set state to Stalking
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(currentState == BigfootState.Charging)

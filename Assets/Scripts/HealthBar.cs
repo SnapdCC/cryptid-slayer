@@ -13,14 +13,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.ChupaLevelBeaten == false)
-        {
-            health = Chupacabra.GetComponent<Health>().GetMax();
-            temp = true;
-        }
-        else
-            health = Bigfoot.GetComponent<Health>().GetMax();
-
+        health = Chupacabra.GetComponent<Health>().GetMax();
         last = health;
         localScale = transform.localScale;
     }
@@ -28,21 +21,9 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (temp == true)
-        {
             health = Chupacabra.GetComponent<Health>().GetHealth();//get current health
             localScale.x = localScale.x * (health / last);//reduces in size when it just took damage
             last = health;//remember last health value
             transform.localScale = localScale;//set local scaling
-        }
-        else
-        {
-            health = Bigfoot.GetComponent<Health>().GetHealth();//get current health
-            localScale.x = localScale.x * (health / last);//reduces in size when it just took damage
-            last = health;//remember last health value
-            transform.localScale = localScale;//set local scaling
-        }
-       
-
     }
 }

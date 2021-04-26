@@ -22,9 +22,9 @@ public class bigfootStalking : StateMachineBehaviour
     {
         //Rotate to face the player
         bigfoot.transform.right = manager.Player.transform.position - bigfoot.transform.position;
-        
+
         //if the current speed isn't base speed, interpolate towards base speed
-        if(manager.CurrentSpeed < manager.BaseSpeed || manager.CurrentSpeed > manager.BaseSpeed)
+        if (manager.CurrentSpeed < manager.BaseSpeed || manager.CurrentSpeed > manager.BaseSpeed)
         {
             manager.InterpolateSpeed(manager.BaseSpeed);
         }
@@ -34,13 +34,19 @@ public class bigfootStalking : StateMachineBehaviour
 
         //count down chargeWaitTimer
         manager.ChargeWaitTimer -= Time.deltaTime;
-        
+
         //If player is in slashing range, change state to Slash
+        if(Vector3.Distance(bigfoot.transform.position, manager.Player.transform.position) < manager.SlashDistance)
+        {
+            animator.Play("Base Layer.Slash Down");
+            //ChangeToSlashing();
+        }
 
         //If chargeWaitTimer is less than 0, reset chargePositionSet and change states to Charge    
-        if(manager.ChargeWaitTimer <= 0)
+        if (manager.ChargeWaitTimer <= 0)
         {
             animator.Play("Base Layer.Charge Down");
+            //ChangeToCharge();
         }
 
     }
@@ -62,6 +68,22 @@ public class bigfootStalking : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
+
+
+    void UpdateStalkingDirection()
+    {
+
+    }
+
+    void ChangeToSlashing()
+    {
+
+    }
+
+    void ChangeToCharge()
+    {
+
+    }
 
 }
 
