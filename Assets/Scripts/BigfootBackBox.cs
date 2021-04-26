@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class BigfootBackBox : MonoBehaviour
 {
-    BigfootFightManager manager;
+    private BigfootFightManager manager;
+    private AudioSource hurt;
+
+    [SerializeField]
+    private AudioClip hurtNoise;
 
     // Start is called before the first frame update
     void Start()
     {
         //initialize manager
         manager = gameObject.GetComponentInParent<BigfootFightManager>();
+
+        hurt = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +29,7 @@ public class BigfootBackBox : MonoBehaviour
     {
         if(trigger.gameObject.tag.Equals("bullet"))
         {
+            hurt.PlayOneShot(hurtNoise, 1f);
             manager.BigfootHealth.TakeDamage();
         }
     }
