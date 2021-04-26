@@ -67092,10 +67092,22 @@ PrefabInstance:
       propertyPath: MaxHealth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2034128730, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.3138428
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034128730, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5034447
+      objectReference: {fileID: 0}
     - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 1688364657}
+    - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: slashDistance
+      value: 2.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4190967830429055539, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
       propertyPath: m_Name
       value: Bigfoot
