@@ -5,12 +5,17 @@ using UnityEngine;
 public class BigfootFrontBox : MonoBehaviour
 {
     private BigfootFightManager manager;
+    private AudioSource deflect;
+
+    [SerializeField]
+    private AudioClip deflectNoise;
 
     // Start is called before the first frame update
     void Start()
     {
         //initialize manager
         manager = gameObject.GetComponentInParent<BigfootFightManager>();
+        deflect = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +28,7 @@ public class BigfootFrontBox : MonoBehaviour
     {
         if(trigger.gameObject.tag.Equals("bullet"))
         {
+            deflect.PlayOneShot(deflectNoise, 1f);
             Destroy(trigger.gameObject);
         }
     }
