@@ -10,6 +10,7 @@ public class ChupButton : MonoBehaviour
     GameManager GameManager;
     public GameObject Continue_Button;
     private float _sec=1f;
+    public GameObject hint1;
 
     void Start()
     {
@@ -24,6 +25,11 @@ public class ChupButton : MonoBehaviour
         yield return new WaitForSeconds(_sec * Time.deltaTime);
 
         Continue_Button.SetActive(true);
+    }
+
+    public void RevealHints()
+    {
+        hint1.SetActive(true);
     }
 
     public void ChupacabraLevel()
