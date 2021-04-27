@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
     int stop = 0;
-    int hintcount;
-    public static int count, tntcount, trappickupcount;
+    public static int count, tntcount, trappickupcount, hintcount;
     public GameObject Explosion;
     public GameObject script;
     public GameObject clue1, clue2, clue3, clue4;

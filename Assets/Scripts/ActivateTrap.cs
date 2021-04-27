@@ -43,10 +43,10 @@ public class ActivateTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*if (GameManager.ChupaLevelBeaten != true)
+        if (GameManager.ChupaLevelBeaten != true)
         {
             particlesystem.SetActive(true);
-        }*/
+        }
 
         if (collision.gameObject.CompareTag("Player") == true)
         {

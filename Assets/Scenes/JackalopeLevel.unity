@@ -887,6 +887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Continue_Button: {fileID: 0}
   hintpanel: {fileID: 1482987610}
+  hintpanel1: {fileID: 0}
+  hintpanel2: {fileID: 0}
 --- !u!1 &327402373
 GameObject:
   m_ObjectHideFlags: 0
@@ -8038,7 +8040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &659559737073054722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9785,6 +9787,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Continue_Button: {fileID: 0}
   hintpanel: {fileID: 0}
+  hintpanel1: {fileID: 0}
+  hintpanel2: {fileID: 0}
 --- !u!224 &6761417716412480475
 RectTransform:
   m_ObjectHideFlags: 0
