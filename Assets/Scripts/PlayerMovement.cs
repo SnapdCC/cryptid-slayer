@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        List = GameObject.FindGameObjectsWithTag("InvisTrap");
 
-        
         if (Input.GetKey(KeyCode.W) == true)
         {
             animator.SetBool("WalkingB", true);
@@ -75,10 +75,11 @@ public class PlayerMovement : MonoBehaviour
         mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
 
 
-        List = GameObject.FindGameObjectsWithTag("InvisTrap");
+        
 
-        if (Input.GetButtonDown("Fire3"))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            Debug.Log("Eyes should work");
             panel.SetActive(true);
                 foreach (GameObject item in List)
             {

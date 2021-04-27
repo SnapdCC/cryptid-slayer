@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
 {
     int stop = 0;
     public static int count, tntcount, trappickupcount, hintcount;
-    public GameObject Explosion;
+    public GameObject Explosion, tntpic, trappic;
     public GameObject script;
     public GameObject clue1, clue2, clue3, clue4;
     public GameObject hinttext1, hinttext2, hinttext3;
@@ -99,12 +99,14 @@ public class Pickup : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             tntcount++;
+            tntpic.SetActive(true);
         }
         if (collision.gameObject.CompareTag("trappickup"))
         {
             collision.gameObject.SetActive(false);
             trappickupcount++;
             Traptext.SetActive(true);
+            trappic.SetActive(true);
             
         }
         if (collision.gameObject.CompareTag("ExplosionTrigger"))
