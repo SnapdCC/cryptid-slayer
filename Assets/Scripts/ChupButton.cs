@@ -10,7 +10,7 @@ public class ChupButton : MonoBehaviour
     GameManager GameManager;
     public GameObject Continue_Button;
     private float _sec=1f;
-    public GameObject hint1;
+    public GameObject hintpanel;
 
     void Start()
     {
@@ -29,9 +29,12 @@ public class ChupButton : MonoBehaviour
 
     public void RevealHints()
     {
-        hint1.SetActive(true);
+        hintpanel.SetActive(true);
     }
-
+    public void HideHints()
+    {
+        hintpanel.SetActive(false);
+    }
     public void ChupacabraLevel()
     {
         SceneManager.LoadScene("ChupacabraLevel");

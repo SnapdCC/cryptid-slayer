@@ -237,6 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4795992895566036749}
   - component: {fileID: 4795992895566036748}
+  - component: {fileID: 3255090094230870874}
   - component: {fileID: 4795992895566036747}
   - component: {fileID: 4795992895566036746}
   - component: {fileID: 4795992895566036745}
@@ -318,6 +319,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3255090094230870874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795992895566036788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c956170d306e14647a320abf0509d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Continue_Button: {fileID: 0}
+  hintpanel: {fileID: 0}
 --- !u!50 &4795992895566036747
 Rigidbody2D:
   serializedVersion: 4
@@ -426,6 +441,7 @@ MonoBehaviour:
   chestclose: {fileID: 0}
   chestopen: {fileID: 0}
   Jackalope: {fileID: 0}
+  Traptext: {fileID: 0}
   spawnmanager: {fileID: 0}
 --- !u!114 &4795992895566036790
 MonoBehaviour:
