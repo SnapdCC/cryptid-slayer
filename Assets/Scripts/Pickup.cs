@@ -17,11 +17,16 @@ public class Pickup : MonoBehaviour
     public GameObject chestclose, chestopen;
     public GameObject Jackalope;
     public GameObject Traptext;
+    public GameObject Teleporter;
     GameObject[] gameObjects;
     public GameObject spawnmanager;
     // Start is called before the first frame update
     void Start()
     {
+        count=0;
+        tntcount=0;
+        trappickupcount=0;
+        hintcount=0;
         cam1.SetActive(true);
         cam2.SetActive(false);
     }
@@ -64,6 +69,7 @@ public class Pickup : MonoBehaviour
             hinttext2.SetActive(false);
             hinttext3.SetActive(true);
             hint3.SetActive(true);
+            Teleporter.SetActive(true);
         }
 
     }
