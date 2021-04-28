@@ -65642,6 +65642,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4190967830429055549, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
   m_PrefabInstance: {fileID: 1936705764}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &1688364659
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688364654}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.054736134, y: 0.015638342}
+  serializedVersion: 2
+  m_Radius: 1.0952652
 --- !u!1 &1696754531
 GameObject:
   m_ObjectHideFlags: 0
@@ -67258,6 +67274,22 @@ PrefabInstance:
       propertyPath: slashDistance
       value: 2.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: chargeDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: slashDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: baseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190967830429055536, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
+      propertyPath: topSpeedMod
+      value: 2.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4190967830429055539, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
       propertyPath: m_Name
       value: Bigfoot
@@ -67306,7 +67338,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4190967830429055548, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a928a244e2b05a4d938d3a2befb4763, type: 3}
 --- !u!1 &1951995893
 GameObject:
