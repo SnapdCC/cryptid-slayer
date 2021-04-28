@@ -21,7 +21,7 @@ public class RabbitsFoot : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift)&&pm.GameManager.JackLevelBeaten)
         {
             if(currentSprint>0){
                 pm.sprinting = true;
