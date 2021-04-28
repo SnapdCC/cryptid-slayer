@@ -54,7 +54,9 @@ public class BigfootFightManager : MonoBehaviour
 
     //Slash variables
     [SerializeField]
-    private float slashDistance = 2f;
+    private float slashDistance = 2f;//Distance from bigfoot the player is before he starts slashing
+
+    private bool playerWasSlashed = false; //keeps track of whether the player's been hit by a slash attack in the current slash attack
 
     //Charge variables
     [SerializeField]
@@ -84,6 +86,7 @@ public class BigfootFightManager : MonoBehaviour
     public PlayerDeath PlayerHealth { get => playerHealth; }
     public Health BigfootHealth { get => bigfootHealth; }
     public float SlashDistance { get => slashDistance; }
+    public bool PlayerWasSlashed { get => playerWasSlashed; set => playerWasSlashed = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -137,7 +140,8 @@ public class BigfootFightManager : MonoBehaviour
         {
             if(collision.gameObject.tag == "Player")
             {
-                playerHealth.TakeDamage();
+                for(int i = 0; i < chargeDamage; i++)
+                    playerHealth.TakeDamage();
             }
         }
     }

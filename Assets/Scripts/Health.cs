@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     private string WinScreen;
     float health;
     [SerializeField]
-    public float MaxHealth = 1f;
+    public float MaxHealth = 4f;
     // Start is called before the first frame update
     void Start()
     {

@@ -38,8 +38,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        List = GameObject.FindGameObjectsWithTag("InvisTrap");
 
-        
         if (Input.GetKey(KeyCode.W) == true)
         {
             animator.SetBool("WalkingB", true);
@@ -72,10 +72,10 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("WalkingF", false);
         }
-        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
 
 
-        List = GameObject.FindGameObjectsWithTag("InvisTrap");
+
 
         if (Input.GetButtonDown("Fire3"))
         {

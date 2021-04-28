@@ -11,6 +11,7 @@ public class BigfootSlashing : StateMachineBehaviour
     {
         manager = animator.gameObject.GetComponent<BigfootFightManager>();
         manager.CurrentState = BigfootFightManager.BigfootState.Slashing;
+        manager.PlayerWasSlashed = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

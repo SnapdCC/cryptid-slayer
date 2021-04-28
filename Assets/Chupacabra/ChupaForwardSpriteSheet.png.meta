@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: fa67bd272b20cf748a1aa9bc691b95e7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5495570751601712042
+    second: ChupaForwardSpriteSheet_0
+  - first:
+      213: -6742461059878409053
+    second: ChupaForwardSpriteSheet_1
+  - first:
+      213: -877296206979051847
+    second: ChupaForwardSpriteSheet_2
+  - first:
+      213: -5334527773598166628
+    second: ChupaForwardSpriteSheet_3
+  - first:
+      213: -626618932022191037
+    second: ChupaForwardSpriteSheet_4
+  - first:
+      213: -234133029679210456
+    second: ChupaForwardSpriteSheet_5
+  - first:
+      213: -3428657579979573193
+    second: ChupaForwardSpriteSheet_6
+  - first:
+      213: -8118415605826177061
+    second: ChupaForwardSpriteSheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,9 +97,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 395
+        width: 132
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654e0c8a48fcbb3b0800000000000000
+      internalID: -5495570751601712042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 397
+        width: 132
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac2b0e9367fd62a0800000000000000
+      internalID: -6742461059878409053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 390
+        width: 132
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be47347fb733d3f0800000000000000
+      internalID: -877296206979051847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 375
+        width: 132
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91d932e043f7f5b0800000000000000
+      internalID: -5334527773598166628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 10
+        width: 132
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c584bb66dcd47f0800000000000000
+      internalID: -626618932022191037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 6
+        width: 132
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820e8cfff3130ccf0800000000000000
+      internalID: -234133029679210456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 10
+        width: 132
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738fdd8c816fa60d0800000000000000
+      internalID: -3428657579979573193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChupaForwardSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 33
+        width: 132
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd73ebb0508955f80800000000000000
+      internalID: -8118415605826177061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

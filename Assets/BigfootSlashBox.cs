@@ -20,14 +20,18 @@ public class BigfootSlashBox : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D trigger)
+    void OnTriggerStay2D(Collider2D trigger)
     {
         if (manager.CurrentState == BigfootFightManager.BigfootState.Slashing)
         {
             if(trigger.gameObject.tag == "Player")
             {
-                Debug.Log("Ouch");
-                manager.PlayerHealth.TakeDamage();
+                if(!manager.PlayerWasSlashed)
+                {
+                    for(int i = 0; i < manager.SlashDamage; i++)
+                        manager.PlayerHealth.TakeDamage();
+                    manager.PlayerWasSlashed = true;
+                }
             }
         }
     }
