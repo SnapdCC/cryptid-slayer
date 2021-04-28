@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
     Vector2 mousepos;
-    GameManager GameManager;
+    public GameManager GameManager;
 
     void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        canSprint = GameManager.JackIsBeat();
-        canSee = GameManager.ChupIsBeat();
+        canSprint = GameManager.JackLevelBeaten;
+        canSee = GameManager.ChupaLevelBeaten;
         animator.SetBool("WalkingF", false);
         animator.SetBool("WalkingB", false);
     }
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!sprinting){
             rbMove.MovePosition(rbMove.position + movement * moveSpeed * Time.fixedDeltaTime);
-        }else if(sprinting&&canSprint){
+        }else if(sprinting&&GameManager.JackLevelBeaten){
             rbMove.MovePosition(rbMove.position + movement * (moveSpeed * sprintMod) * Time.fixedDeltaTime);
         }
     }
