@@ -72,14 +72,13 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("WalkingF", false);
         }
-        mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
+        //mousepos = cam.ScreenToWorldPoint(Input.mousePosition);
 
 
-        
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+
+        if (Input.GetButtonDown("Fire3"))
         {
-            Debug.Log("Eyes should work");
             panel.SetActive(true);
                 foreach (GameObject item in List)
             {
