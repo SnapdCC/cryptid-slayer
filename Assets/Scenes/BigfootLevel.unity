@@ -69306,7 +69306,7 @@ MonoBehaviour:
   trapPrefab: {fileID: 97242724439222003, guid: b46f5ae952edf3342a5bf968d2681709, type: 3}
   gunsound: {fileID: 264501707}
   bulletForce: 20
-  reloadTime: 0.25
+  reloadTime: 0.5
 --- !u!4 &4795992895367968290
 Transform:
   m_ObjectHideFlags: 0

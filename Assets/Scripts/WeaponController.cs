@@ -42,7 +42,7 @@ public class WeaponController : MonoBehaviour
     {
         reload=Mathf.Max(0f, reload-Time.deltaTime);
         if(Time.timeScale>0){
-            if(Input.GetButtonDown("Fire1")&&reload==0)
+            if(Input.GetButtonDown("Fire1") && reload <= 0)
             {
                 Shoot();
                 gunsound.Play();
@@ -62,6 +62,7 @@ public class WeaponController : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation*angle);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        reload = reloadTime;
         Destroy(bullet.gameObject, .5f);
     }
     void PlaceTrap(){
