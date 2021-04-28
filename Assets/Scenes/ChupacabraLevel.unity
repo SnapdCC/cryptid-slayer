@@ -73125,6 +73125,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 353646723, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c8428ea3656b734b9576867b51c8d26, type: 3}
     - target: {fileID: 3255090094230870874, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
       propertyPath: hintpanel
       value: 
@@ -73137,6 +73141,10 @@ PrefabInstance:
       propertyPath: hintpanel2
       value: 
       objectReference: {fileID: 1612900330}
+    - target: {fileID: 4795992895202529558, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
+      propertyPath: reloadTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4795992895566036746, guid: 4dcbe4e5876436c42a9af17845da6d2b, type: 3}
       propertyPath: cam
       value: 
